@@ -158,7 +158,7 @@
 @media(max-width:900px) {
  .desktop-nav { gap:16px; } .desktop-nav .nav-link { display:none; }
  .hero h1 { font-size:52px; } .hero-copy { max-width:430px; }
- .product-grid { gap:15px; } .offer-layout { gap:30px; }
+ .product-grid { gap:15px; } .offer-layout { gap:30px; } .testimonial-layout { gap:30px; } .testimonial-copy h2 { font-size:34px; }
 }
 @media(max-width:640px) {
  .container-site { padding-inline:20px; } .promo-bar { font-size:10px; padding-block:8px; }
@@ -176,6 +176,7 @@
  .product-tag { top:7px; left:7px; font-size:8px; padding:4px 6px; }
  .benefit-grid { grid-template-columns:repeat(2,1fr); gap:24px 16px; } .benefit h3 { font-size:19px; } .benefit p { font-size:12px; }
  .offer-layout { grid-template-columns:1fr; gap:28px; } .offer-story { text-align:center; } .offer-story h2 { font-size:34px; } .offer-story img { display:none; }
+ .testimonial-layout { grid-template-columns:1fr; gap:26px; } .testimonial-photo img { aspect-ratio:1.1; } .testimonial-photo-label { right:12px; bottom:16px; font-size:14px; } .testimonial-copy h2 { font-size:30px; } .testimonials-grid { grid-template-columns:1fr; }
  .offer-body { padding:24px 20px; } .offer-body h3 { text-align:center; }
  .footer-inner { flex-direction:column; text-align:center; gap:8px; } .faq-item summary { font-size:14px; }
 }
