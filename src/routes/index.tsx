@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
-import { ArrowRight, ArrowUpRight, Check, ChevronLeft, ChevronRight, Download, Heart, House, LockKeyhole, MonitorOff, PackageOpen, Palette, Plus, Printer, Scissors, ShieldCheck, Sparkles, X } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, ChevronLeft, ChevronRight, Download, Heart, House, LockKeyhole, MonitorOff, PackageOpen, Palette, Plus, Printer, Quote, Scissors, ShieldCheck, Sparkles, Star, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import pinkHouse from '@/assets/1613852601-1281479777.jpg.asset.json';
 import kittyRoom from '@/assets/97f56883c249237d2e342d7d2f99bb22.jpg.asset.json';
@@ -11,6 +11,12 @@ import purpleHouse from '@/assets/1613852601-206645978.jpg.asset.json';
 import kitchen from '@/assets/16138526011101468689.jpg.asset.json';
 import livingRoom from '@/assets/1613852601322581794.jpg.asset.json';
 import rooms from '@/assets/16138526011870265434.jpg.asset.json';
+import peppaPig from '@/assets/IMG-20261006-WA0024.jpg.asset.json';
+import redTruck from '@/assets/IMG-20261006-WA0025.jpg.asset.json';
+import hulkHero from '@/assets/IMG-20261006-WA0020.jpg.asset.json';
+import pikachu from '@/assets/IMG-20261006-WA0021.jpg.asset.json';
+import bluey from '@/assets/IMG-20261006-WA0022.jpg.asset.json';
+import kidsPhoto from '@/assets/IMG-20261006-WA0026.jpg.asset.json';
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -33,6 +39,11 @@ const products = [
   { name: 'Cozinha em Miniatura', detail: 'Pequenos detalhes, muita diversão', category: 'Detalhes', image: kitchen.url, tag: 'MÓVEIS DE PAPEL' },
   { name: 'Sala de Estar', detail: 'Um cantinho para reunir a turma', category: 'Ambientes', image: livingRoom.url, tag: 'MONTE SEU MUNDO' },
   { name: 'Coleção de Ambientes', detail: 'Cada cômodo, uma brincadeira', category: 'Ambientes', image: rooms.url, tag: 'VÁRIOS AMBIENTES' },
+  { name: 'Peppa Pig e seu Ônibus', detail: 'A turma favorita em papel', category: 'Personagens', image: peppaPig.url, tag: 'RECORTE E MONTE' },
+  { name: 'Picape Esportiva', detail: 'Corridas pela sala de estar', category: 'Veículos', image: redTruck.url, tag: 'MINIATURA 3D' },
+  { name: 'Herói Esmagador', detail: 'Fúria verde para salvar o dia', category: 'Personagens', image: hulkHero.url, tag: 'MUNDO DOS HERÓIS' },
+  { name: 'Amigo Elétrico', detail: 'O personagem amarelo favorito', category: 'Personagens', image: pikachu.url, tag: 'CHEIA DE FOFURA' },
+  { name: 'Dupla Aventureira', detail: 'Irmãs cachorras cheias de ideias', category: 'Personagens', image: bluey.url, tag: 'PARA IMAGINAR' },
 ];
 const faqs = [
  ['É um produto físico?', 'Não. A proposta é uma coleção digital de arquivos para imprimir, recortar, montar e brincar. Nenhuma casinha física é enviada.'],
@@ -41,6 +52,12 @@ const faqs = [
  ['É fácil montar?', 'É só imprimir, recortar e montar seguindo as indicações de cada modelo. Algumas peças podem precisar da ajuda de um adulto, principalmente ao usar a tesoura.'],
  ['Posso imprimir mais de uma vez?', 'Sim, os arquivos podem ser impressos novamente para uso pessoal. Assim, a brincadeira pode recomeçar com novas histórias.'],
  ['Posso acessar pelo celular?', 'Sim, os arquivos digitais podem ser acessados por celular ou computador. Para montar os brinquedos, é necessário imprimi-los.'],
+];
+const testimonials = [
+  ['Minha filha passou a tarde inteira montando a casinha. Nunca a vi tão concentrada em uma brincadeira!', 'Mamãe da Alice'],
+  ['Imprimimos, recortamos juntos e virou brincadeira de todo dia. Diversão longe das telas, do jeito que a gente queria.', 'Papai do Theo'],
+  ['As crianças amaram! Cada uma montou seu personagem e ainda inventou histórias para brincar junto.', 'Professora Ana'],
+  ['As pecinhas são fofas e fáceis de montar. Virou presente certo para os amiguinhos.', 'Tia da Lara'],
 ];
 function Logo() { return <a href="#inicio" className="logo" aria-label="Criando 3D, início"><span className="logo-mark"><House size={25} strokeWidth={2.2}/></span><span>criando<span className="text-primary">3D</span><span className="text-aqua">.</span></span></a>; }
 function CollectionCTA({ purchase = false, onPurchase }: { purchase?: boolean; onPurchase?: () => void }) {
