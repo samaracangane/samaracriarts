@@ -107,6 +107,19 @@
 .benefit-icon { margin:auto; display:grid; place-items:center; height:54px; width:54px; color:var(--accent-foreground); background:var(--card); border-radius:50%; }
 .benefit h3 { font-size:21px; margin:16px 0 8px; }
 .benefit p { font-size:14px; color:var(--muted-foreground); line-height:1.7; }
+.testimonial-band { background:var(--yellow-soft); }
+.testimonial-layout { display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:center; }
+.testimonial-photo { position:relative; }
+.testimonial-photo img { width:100%; aspect-ratio:0.78; object-fit:cover; border-radius:8px; border:6px solid var(--card); box-shadow:0 12px 30px color-mix(in oklab,var(--primary) 14%,transparent); }
+.testimonial-photo-label { position:absolute; right:-10px; bottom:26px; background:var(--primary); color:var(--primary-foreground); font-family:var(--font-display); font-size:17px; padding:9px 16px; border-radius:6px; transform:rotate(3deg); }
+.testimonial-copy h2 { font-size:40px; line-height:1.15; margin:12px 0 8px; }
+.testimonial-copy > p { color:var(--muted-foreground); line-height:1.7; font-size:15px; margin-bottom:22px; }
+.testimonials-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.testimonial-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:18px 20px; margin:0; }
+.testimonial-card .stars { display:flex; gap:2px; color:var(--secondary); }
+.testimonial-card blockquote { display:flex; gap:8px; font-size:13.5px; line-height:1.65; margin:10px 0 10px; color:var(--foreground); }
+.testimonial-card blockquote svg { color:var(--primary); flex-shrink:0; }
+.testimonial-card figcaption { font-size:11px; font-weight:900; text-transform:uppercase; color:var(--primary); }
 .offer-section { background:var(--pink-soft); }
 .offer-layout { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
 .offer-story h2 { font-size:44px; line-height:1.1; margin:15px 0; }
