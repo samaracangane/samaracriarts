@@ -109,20 +109,6 @@
 .benefit-icon { margin:auto; display:grid; place-items:center; height:54px; width:54px; color:var(--accent-foreground); background:var(--card); border-radius:8px; }
 .benefit h3 { font-size:21px; margin:16px 0 8px; }
 .benefit p { font-size:14px; color:var(--muted-foreground); line-height:1.7; }
-.testimonial-band { background:var(--yellow-soft); }
-.testimonial-layout { display:grid; grid-template-columns:1fr 1.05fr; gap:60px; align-items:center; }
-.testimonial-photo { position:relative; }
-.testimonial-photo img { width:100%; height:auto; object-fit:contain; border-radius:8px; border:6px solid var(--card); box-shadow:var(--shadow-product); }
-.testimonial-photo-label { position:absolute; right:16px; bottom:20px; display:flex; align-items:center; gap:8px; background:var(--primary); color:var(--primary-foreground); font-family:var(--font-display); font-size:17px; padding:9px 16px; border-radius:6px;  }
-.testimonial-copy h2 { font-size:42px; line-height:1.15; margin:12px 0 8px; }
-.testimonial-copy > p { color:var(--muted-foreground); line-height:1.7; font-size:15px; margin-bottom:22px; }
-.testimonials-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-.testimonial-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:18px 20px; margin:0; }
-.review-note { font-size:12px !important; }
-.review-label { font-size:9px; color:var(--muted-foreground); font-weight:800; }
-.testimonial-card blockquote { display:flex; gap:8px; font-size:13.5px; line-height:1.65; margin:10px 0 10px; color:var(--foreground); }
-.testimonial-card blockquote svg { color:var(--primary); flex-shrink:0; }
-.testimonial-card figcaption { font-size:10px; font-weight:700; color:var(--muted-foreground); }
 .offer-section { background:var(--pink-soft); }
 .offer-layout { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
 .offer-story h2 { font-size:44px; line-height:1.1; margin:15px 0; }
@@ -161,7 +147,7 @@
 @media(max-width:900px) {
  .desktop-nav { gap:16px; } .desktop-nav .nav-link { display:none; }
  .hero h1 { font-size:46px; } .hero-copy { max-width:430px; }
- .product-grid { gap:15px; } .offer-layout { gap:30px; } .testimonial-layout { gap:30px; } .testimonial-copy h2 { font-size:34px; }
+ .product-grid { gap:15px; } .offer-layout { gap:30px; }
 }
 @media(max-width:640px) {
  .container-site { padding-inline:20px; } .promo-bar { font-size:10px; padding-block:8px; }
@@ -179,7 +165,6 @@
  .product-tag { bottom:5px; left:5px; font-size:8px; padding:4px 6px; }
  .benefit-grid { grid-template-columns:repeat(2,1fr); gap:24px 16px; } .benefit h3 { font-size:19px; } .benefit p { font-size:12px; }
  .offer-layout { grid-template-columns:1fr; gap:28px; } .offer-story { text-align:center; } .offer-story h2 { font-size:34px; } .offer-story img { display:none; }
- .testimonial-layout { grid-template-columns:1fr; gap:26px; } .testimonial-photo img { height:auto; } .testimonial-photo-label { right:12px; bottom:16px; font-size:11px; } .testimonial-copy h2 { font-size:30px; } .testimonials-grid { grid-template-columns:1fr; }
  .offer-body { padding:24px 20px; } .offer-body h3 { text-align:center; }
  .footer-inner { flex-direction:column; text-align:center; gap:8px; } .faq-item summary { font-size:14px; }
 }
