@@ -78,9 +78,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Criando 3D — Brinquedos de papel" },
+      { title: "Samara Criar Art's — Brinquedos de papel" },
       { name: "description", content: "Um mundo de casinhas e brinquedos de papel para imprimir, montar e brincar." },
-      { property: "og:title", content: "Criando 3D — Brinquedos de papel" },
+      { property: "og:title", content: "Samara Criar Art's — Brinquedos de papel" },
       { property: "og:description", content: "A criatividade ganha vida com casinhas e brinquedos de papel." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
