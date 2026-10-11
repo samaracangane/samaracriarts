@@ -1,7 +1,9 @@
-# Site Criando 3D
+# Site Samara Criar Art's
 - [x] Criar página inspirada no modelo com paleta rosa, amarelo e verde-água.
 - [x] Incluir as nove imagens, galeria e perguntas frequentes.
 - [x] Verificar navegação e visualização.
 - [x] Refinar apresentação, enquadramento das imagens e textos sobre brincar longe das telas.
 - [x] Conectar os botões de compra ao link de pagamento fornecido.
-- [x] Refinar os depoimentos ilustrativos sem apresentá-los como avaliações reais.
+- [x] Adicionar seção de depoimentos (textos de exemplo, marcados como exemplo).
+- [ ] Trocar a marca para "Samara Criar Art's" em todo o site: título da página, textos da marca e logotipo.
+- [ ] Deixar o visual ainda mais profissional.
