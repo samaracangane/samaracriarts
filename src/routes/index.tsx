@@ -56,11 +56,11 @@ const benefits = [
 ];
 
 const faqs = [
-  ['Os arquivos são digitais?', 'Sim! Você recebe arquivos para imprimir (PDF), não um brinquedo físico enviado pelos Correios. A entrega é 100% digital e imediata após o pagamento.'],
+  ['Os arquivos são digitais?', 'Sim. Este produto é digital: você compra arquivos para imprimir, não um brinquedo físico enviado pelos Correios. Confira no checkout as condições de acesso aos arquivos.'],
   ['Como recebo os arquivos?', 'Os produtos são digitais. Antes de finalizar a compra, confira no checkout as condições e instruções de acesso aos arquivos.']
   ['Preciso de uma impressora colorida?', 'Uma impressora comum funciona. Se tiver impressora colorida, as cores ficam mais vibrantes; em preto e branco, você pode colorir à mão.'],
-  ['É fácil montar?', 'Sim! É só imprimir, recortar e montar seguindo as indicações de cada modelo. Crianças a partir de 4 anos conseguem com ajuda de um adulto.'],
-  ['Posso imprimir mais de uma vez?', 'Sim, os arquivos podem ser impressos novamente para uso pessoal, quantas vezes quiser.'],
+  ['Como monto os brinquedos?', 'A proposta é imprimir, recortar e montar as peças. Confira a descrição do modelo escolhido para verificar as orientações específicas de montagem.'],
+  ['Posso imprimir mais de uma vez?', 'Consulte as condições de uso e impressão informadas junto ao produto antes de comprar.'],
   ['Como acesso os arquivos no celular?', 'Os arquivos digitais podem ser acessados por celular ou computador. Para montar os brinquedos, você precisará imprimi-los.'],
   ['Como funciona o pagamento?', 'O pagamento é realizado pelo checkout atual. Confira nele as formas de pagamento e as condições apresentadas antes de concluir a compra.']
   ['O produto é físico?', 'Não. Você está comprando arquivos digitais para imprimir. Nenhum brinquedo físico será enviado pelos Correios.']
@@ -142,11 +142,11 @@ function Index() {
                 Imprima, recorte, <span>monte</span> e <span>brinque</span> juntos
               </h1>
               <p className="hero-description">
-                Uma coleção completa de casinhas, personagens e brinquedos em papel. Entrega 100% digital, pronta para imprimir em casa.
+                Uma coleção de casinhas, personagens e brinquedos em papel para imprimir, recortar, montar e brincar.
               </p>
               <div className="hero-tags">
                 <span>
-                  <Download size={15} aria-hidden="true" /> Acesso imediato
+                  <Download size={15} aria-hidden="true" /> Arquivo digital
                 </span>
                 <span>
                   <Heart size={15} aria-hidden="true" /> Presentes que unem
@@ -197,7 +197,6 @@ function Index() {
               </p>
               <ul className="pitch-points">
                 <li><Check size={15} aria-hidden="true" /> 14 modelos diferentes</li>
-                <li><Check size={15} aria-hidden="true" /> Arquivos em alta resolução</li>
                               </ul>
             </div>
             <div className="pitch-mosaic">
