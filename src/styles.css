@@ -221,3 +221,8 @@
  .footer-inner { flex-direction:column; text-align:center; gap:8px; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; animation:none !important; } }
+
+
+/* Foco visível para navegação por teclado */
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--aqua); outline-offset: 3px; }
+@media (max-width: 640px) { .filter-row { justify-content: flex-start; } .filter-btn { min-height: 40px; } }
