@@ -49,20 +49,20 @@ const products = [
 const categories = ['Todos', 'Casinhas', 'Ambientes', 'Personagens', 'Veículos', 'Detalhes'];
 
 const benefits = [
-  { icon: 'Printer', title: 'Pronto para Imprimir', description: 'Arquivos otimizados para impressoras comuns, coloridas ou em preto e branco.' },
-  { icon: 'Scissors', title: 'Fácil de Montar', description: 'Instruções claras para cada brinquedo e processo de montagem.' },
+  { icon: 'Printer', title: 'Pronto para Imprimir', description: 'Arquivos digitais para imprimir em casa. Confira os detalhes de cada modelo antes de comprar.' },
+  { icon: 'Scissors', title: 'Fácil de Montar', description: 'Recorte e monte as peças conforme as orientações disponíveis em cada modelo.' },
   { icon: 'Heart', title: 'Tempo em Família', description: 'Uma atividade que une gerações ao redor da criatividade.' },
   { icon: 'Download', title: 'Formato Digital', description: 'Arquivos digitais para imprimir e montar em casa.' }
 ];
 
 const faqs = [
   ['Os arquivos são digitais?', 'Sim. Este produto é digital: você compra arquivos para imprimir, não um brinquedo físico enviado pelos Correios. Confira no checkout as condições de acesso aos arquivos.'],
-  ['Como recebo os arquivos?', 'Os produtos são digitais. Antes de finalizar a compra, confira no checkout as condições e instruções de acesso aos arquivos.']
+  ['Como recebo os arquivos?', 'Os produtos são digitais. Antes de finalizar a compra, confira no checkout as condições e instruções de acesso aos arquivos.'],
   ['Preciso de uma impressora colorida?', 'Uma impressora comum funciona. Se tiver impressora colorida, as cores ficam mais vibrantes; em preto e branco, você pode colorir à mão.'],
   ['Como monto os brinquedos?', 'A proposta é imprimir, recortar e montar as peças. Confira a descrição do modelo escolhido para verificar as orientações específicas de montagem.'],
   ['Posso imprimir mais de uma vez?', 'Consulte as condições de uso e impressão informadas junto ao produto antes de comprar.'],
   ['Como acesso os arquivos no celular?', 'Os arquivos digitais podem ser acessados por celular ou computador. Para montar os brinquedos, você precisará imprimi-los.'],
-  ['Como funciona o pagamento?', 'O pagamento é realizado pelo checkout atual. Confira nele as formas de pagamento e as condições apresentadas antes de concluir a compra.']
+  ['Como funciona o pagamento?', 'O pagamento é realizado pelo checkout atual. Confira nele as formas de pagamento e as condições apresentadas antes de concluir a compra.'],
   ['O produto é físico?', 'Não. Você está comprando arquivos digitais para imprimir. Nenhum brinquedo físico será enviado pelos Correios.']
 ];
 
@@ -317,8 +317,7 @@ function Index() {
                 <h3>Tudo que você precisa</h3>
                 <ul className="offer-list">
                   <li><Check size={18} aria-hidden="true" /> 14 brinquedos diferentes</li>
-                  <li><Check size={18} aria-hidden="true" /> Arquivos em PDF para imprimir</li>
-                  <li><Check size={18} aria-hidden="true" /> Arquivos digitais em PDF</li>
+                  <li><Check size={18} aria-hidden="true" /> Arquivos digitais para imprimir</li>
                   <li><Check size={18} aria-hidden="true" /> Modelos para imprimir e montar</li>
                   <li><Check size={18} aria-hidden="true" /> Produto digital, sem envio físico</li>
                 </ul>
