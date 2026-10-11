@@ -126,7 +126,7 @@
 .offer-layout { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
 .offer-story h2 { font-size:44px; line-height:1.1; margin:15px 0; font-weight:700; }
 .offer-story p { line-height:1.75; color:var(--muted-foreground); }
-.offer-story img { width:100%; aspect-ratio:1.5; object-fit:contain; box-sizing:border-box; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-card); padding:14px; margin-top:22px; box-shadow:var(--shadow-soft); }
+.offer-story img { width:100%; aspect-ratio:1; object-fit:contain; box-sizing:border-box; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-card); padding:14px; margin-top:22px; box-shadow:var(--shadow-soft); }
 .offer-card { background:var(--card); border:1px solid color-mix(in oklab,var(--primary) 30%,var(--border)); border-radius:var(--radius-card); overflow:hidden; box-shadow:var(--shadow-product); }
 .offer-ribbon { background:var(--brand-grad); color:var(--primary-foreground); padding:13px; text-align:center; font-size:12px; font-weight:900; letter-spacing:.06em; }
 .offer-body { padding:30px; }
