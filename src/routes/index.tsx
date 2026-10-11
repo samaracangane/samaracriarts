@@ -58,10 +58,10 @@ const benefits = [
 const faqs = [
   ['Os arquivos são digitais?', 'Sim. Este produto é digital: você compra arquivos para imprimir, não um brinquedo físico enviado pelos Correios. Confira no checkout as condições de acesso aos arquivos.'],
   ['Como recebo os arquivos?', 'Os produtos são digitais. Antes de finalizar a compra, confira no checkout as condições e instruções de acesso aos arquivos.'],
-  ['Preciso de uma impressora colorida?', 'Uma impressora comum funciona. Se tiver impressora colorida, as cores ficam mais vibrantes; em preto e branco, você pode colorir à mão.'],
+  ['Preciso de uma impressora colorida?', 'Confira a descrição do modelo escolhido para verificar os requisitos de impressão e os materiais necessários.'],
   ['Como monto os brinquedos?', 'A proposta é imprimir, recortar e montar as peças. Confira a descrição do modelo escolhido para verificar as orientações específicas de montagem.'],
   ['Posso imprimir mais de uma vez?', 'Consulte as condições de uso e impressão informadas junto ao produto antes de comprar.'],
-  ['Como acesso os arquivos no celular?', 'Os arquivos digitais podem ser acessados por celular ou computador. Para montar os brinquedos, você precisará imprimi-los.'],
+  ['Como acesso os arquivos no celular?', 'Consulte as instruções de acesso informadas no checkout após escolher o produto. Para brincar com o modelo em papel, será necessário imprimir as peças.'],
   ['Como funciona o pagamento?', 'O pagamento é realizado pelo checkout atual. Confira nele as formas de pagamento e as condições apresentadas antes de concluir a compra.'],
   ['O produto é físico?', 'Não. Você está comprando arquivos digitais para imprimir. Nenhum brinquedo físico será enviado pelos Correios.']
 ];
@@ -241,6 +241,7 @@ function Index() {
                   <div>
                     <h3>{product.name}</h3>
                     <p>{product.detail}</p>
+                    <span className="product-category">{product.category}</span>
                   </div>
                   <button
                     onClick={() => setSelected(filteredProducts.findIndex((item) => item.name === product.name))}
