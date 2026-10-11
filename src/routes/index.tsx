@@ -16,7 +16,6 @@ import redTruck from '@/assets/IMG-20261006-WA0025.jpg.asset.json';
 import hulkHero from '@/assets/IMG-20261006-WA0020.jpg.asset.json';
 import pikachu from '@/assets/IMG-20261006-WA0021.jpg.asset.json';
 import bluey from '@/assets/IMG-20261006-WA0022.jpg.asset.json';
-import kidsPhoto from '@/assets/IMG-20261006-WA0026.jpg.asset.json';
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -53,18 +52,18 @@ const benefits = [
   { icon: 'Printer', title: 'Pronto para Imprimir', description: 'Arquivos otimizados para impressoras comuns, coloridas ou em preto e branco.' },
   { icon: 'Scissors', title: 'Fácil de Montar', description: 'Instruções claras para cada brinquedo e processo de montagem.' },
   { icon: 'Heart', title: 'Tempo em Família', description: 'Uma atividade que une gerações ao redor da criatividade.' },
-  { icon: 'Download', title: 'Acesso Imediato', description: 'Baixe os arquivos no mesmo momento da compra.' },
+  { icon: 'Download', title: 'Formato Digital', description: 'Arquivos digitais para imprimir e montar em casa.' }
 ];
 
 const faqs = [
   ['Os arquivos são digitais?', 'Sim! Você recebe arquivos para imprimir (PDF), não um brinquedo físico enviado pelos Correios. A entrega é 100% digital e imediata após o pagamento.'],
-  ['Como funciona a entrega?', 'Após confirmar o pagamento, você recebe acesso imediato aos arquivos e pode baixá-los quando quiser.'],
+  ['Como recebo os arquivos?', 'Os produtos são digitais. Antes de finalizar a compra, confira no checkout as condições e instruções de acesso aos arquivos.']
   ['Preciso de uma impressora colorida?', 'Uma impressora comum funciona. Se tiver impressora colorida, as cores ficam mais vibrantes; em preto e branco, você pode colorir à mão.'],
   ['É fácil montar?', 'Sim! É só imprimir, recortar e montar seguindo as indicações de cada modelo. Crianças a partir de 4 anos conseguem com ajuda de um adulto.'],
   ['Posso imprimir mais de uma vez?', 'Sim, os arquivos podem ser impressos novamente para uso pessoal, quantas vezes quiser.'],
   ['Como acesso os arquivos no celular?', 'Os arquivos digitais podem ser acessados por celular ou computador. Para montar os brinquedos, você precisará imprimi-los.'],
-  ['Como funciona o pagamento?', 'A compra é feita no checkout atual, com confirmação por email e acesso imediato ao material digital.'],
-  ['Há garantia de satisfação?', 'A página apresenta os detalhes dos produtos e qualquer dúvida pode ser esclarecida antes da compra.'],
+  ['Como funciona o pagamento?', 'O pagamento é realizado pelo checkout atual. Confira nele as formas de pagamento e as condições apresentadas antes de concluir a compra.']
+  ['O produto é físico?', 'Não. Você está comprando arquivos digitais para imprimir. Nenhum brinquedo físico será enviado pelos Correios.']
 ];
 
 function Logo() {
@@ -154,7 +153,7 @@ function Index() {
                 </span>
               </div>
               <p className="trust-line">
-                <Check size={16} aria-hidden="true" /> Arquivos digitais entregues por email
+                <Check size={16} aria-hidden="true" /> Produto digital, sem envio de item físico
               </p>
               <Button variant="playful" size="lg" className="mt-6" asChild>
                 <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
@@ -194,14 +193,12 @@ function Index() {
               </p>
               <h2 id="pitch-title">Uma coleção digital completa</h2>
               <p>
-                Após a compra, você acessa imediatamente uma biblioteca de arquivos em PDF prontos para imprimir. Cada modelo inclui instruções simples e todas as peças já dimensionadas para recorte.
+                A coleção reúne arquivos digitais em PDF para imprimir. Consulte a descrição de cada produto e as condições de acesso apresentadas no checkout antes de finalizar a compra.
               </p>
               <ul className="pitch-points">
                 <li><Check size={15} aria-hidden="true" /> 14 modelos diferentes</li>
                 <li><Check size={15} aria-hidden="true" /> Arquivos em alta resolução</li>
-                <li><Check size={15} aria-hidden="true" /> Instruções ilustradas</li>
-                <li><Check size={15} aria-hidden="true" /> Uso pessoal ilimitado</li>
-              </ul>
+                              </ul>
             </div>
             <div className="pitch-mosaic">
               <img src={kittyHouse.url} alt="Casinha Hello Kitty montada com detalhes de móveis" />
@@ -218,7 +215,7 @@ function Index() {
               <Palette size={15} aria-hidden="true" /> Um universo para criar
             </p>
             <h2 id="products-title">A coleção completa</h2>
-            <p>14 modelos cuidadosamente desenvolvidos para literalmente transformar a criatividade em brincadeira.</p>
+            <p>14 modelos para imprimir, recortar, montar e transformar em brincadeira.</p>
           </div>
 
           <div className="filter-row" role="group" aria-label="Filtrar produtos por categoria">
@@ -275,7 +272,7 @@ function Index() {
                 <Heart size={15} aria-hidden="true" /> O que torna especial
               </p>
               <h2 id="benefits-title">Tudo pensado em você</h2>
-              <p>Desde a qualidade dos arquivos até a experiência de compra, cada detalhe foi pensado.</p>
+              <p>Uma proposta de atividade manual para imprimir, recortar, montar e brincar.</p>
             </div>
 
             <div className="benefit-grid">
@@ -305,13 +302,12 @@ function Index() {
           <div className="container-site offer-layout">
             <div className="offer-story">
               <p className="eyebrow">
-                <Sparkles size={15} aria-hidden="true" /> Já compraram e amaram
+                <Sparkles size={15} aria-hidden="true" /> Brincadeira criativa
               </p>
-              <h2 id="offer-title">Crianças e famílias em todo Brasil</h2>
+              <h2 id="offer-title">Mais imaginação em cada montagem</h2>
               <p>
-                Pais, tias e educadoras descobriram que os brinquedos de papel criam momentos reais longe das telas. Cada casinha montada é uma história criada juntos.
+                Escolha um modelo, imprima as páginas, recorte as peças e monte seu brinquedo de papel. Uma atividade manual para explorar a criatividade e criar novas histórias.
               </p>
-              <img src={kidsPhoto.url} alt="Crianças montando e brincando com brinquedos de papel" />
             </div>
 
             <div className="offer-card">
@@ -323,10 +319,9 @@ function Index() {
                 <ul className="offer-list">
                   <li><Check size={18} aria-hidden="true" /> 14 brinquedos diferentes</li>
                   <li><Check size={18} aria-hidden="true" /> Arquivos em PDF para imprimir</li>
-                  <li><Check size={18} aria-hidden="true" /> Instruções passo a passo</li>
-                  <li><Check size={18} aria-hidden="true" /> Uso pessoal ilimitado</li>
-                  <li><Check size={18} aria-hidden="true" /> Acesso imediato por email</li>
-                  <li><Check size={18} aria-hidden="true" /> Compatível com impressoras comuns</li>
+                  <li><Check size={18} aria-hidden="true" /> Arquivos digitais em PDF</li>
+                  <li><Check size={18} aria-hidden="true" /> Modelos para imprimir e montar</li>
+                  <li><Check size={18} aria-hidden="true" /> Produto digital, sem envio físico</li>
                 </ul>
                 <div className="price-area">
                   <p>Investimento na criatividade e na família</p>
