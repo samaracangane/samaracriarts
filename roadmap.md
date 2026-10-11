@@ -5,5 +5,7 @@
 - [x] Refinar apresentação, enquadramento das imagens e textos sobre brincar longe das telas.
 - [x] Conectar os botões de compra ao link de pagamento fornecido.
 - [x] Adicionar seção de depoimentos (textos de exemplo, marcados como exemplo).
-- [ ] Trocar a marca para "Samara Criar Art's" em todo o site: título da página, textos da marca e logotipo.
-- [ ] Deixar o visual ainda mais profissional.
+- [x] Trocar a marca para "Samara Criar Art's" em todo o site: título da página, textos da marca e logotipo.
+- [x] Deixar o visual ainda mais profissional.
+- [ ] Publicar a versão atual no endereço samaracriarts.lovable.app (aguardando confirmação).
+- [ ] Colocar depoimentos reais sem aviso quando a dona do site enviar os textos.
