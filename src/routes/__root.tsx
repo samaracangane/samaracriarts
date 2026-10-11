@@ -13,6 +13,53 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+const META_PIXEL_ID = "26146580185043768";
+
+declare global {
+  interface Window {
+    fbq?: ((...args: unknown[]) => void) & {
+      callMethod?: (...args: unknown[]) => void;
+      queue?: unknown[][];
+      push?: (...args: unknown[]) => void;
+      loaded?: boolean;
+      version?: string;
+    };
+    _fbq?: Window["fbq"];
+    __samaraMetaPixelInitialized?: boolean;
+  }
+}
+
+function MetaPixel() {
+  useEffect(() => {
+    if (window.__samaraMetaPixelInitialized) return;
+    window.__samaraMetaPixelInitialized = true;
+
+    if (!window.fbq) {
+      const fbq = function (...args: unknown[]) {
+        if (fbq.callMethod) fbq.callMethod(...args);
+        else (fbq.queue ??= []).push(args);
+      } as NonNullable<Window["fbq"]>;
+      fbq.push = fbq;
+      fbq.loaded = true;
+      fbq.version = "2.0";
+      fbq.queue = [];
+      window.fbq = fbq;
+      window._fbq = fbq;
+
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://connect.facebook.net/en_US/fbevents.js";
+      script.id = "facebook-pixel-script";
+      document.head.appendChild(script);
+    }
+
+    window.fbq("init", META_PIXEL_ID);
+    window.fbq("track", "PageView");
+  }, []);
+
+  return null;
+}
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -105,6 +152,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        <MetaPixel />
       </head>
       <body>
         {children}
