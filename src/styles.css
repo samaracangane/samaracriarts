@@ -47,6 +47,7 @@
   --aqua-soft: oklch(0.94 0.043 179);
   --pink-soft: oklch(0.956 0.038 350);
   --yellow-soft: oklch(0.975 0.055 94);
+  --star: oklch(0.72 0.16 78);
   --shadow-playful: 0 4px 0 oklch(0.76 0.15 90);
   --shadow-product: 0 12px 32px color-mix(in oklab,var(--foreground) 7%,transparent);
   --hero-wash-mobile: linear-gradient(180deg,var(--pink-soft) 0%,var(--pink-soft) 48%,transparent 62%);
