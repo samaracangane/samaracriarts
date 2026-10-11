@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
-import { ArrowRight, Check, ChevronRight, Download, Heart, House, Palette, Printer, Scissors, Sparkles, X } from 'lucide-react';
+import { ArrowRight, Check, ChevronLeft, ChevronRight, Download, Heart, House, Palette, Printer, Scissors, Sparkles, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import pinkHouse from '@/assets/1613852601-1281479777.jpg.asset.json';
 import kittyRoom from '@/assets/97f56883c249237d2e342d7d2f99bb22.jpg.asset.json';
@@ -221,7 +221,7 @@ function Index() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setFilter(cat)}
+                onClick={() => { setFilter(cat); setSelected(null); }}
                 className={`filter-btn ${filter === cat ? 'active' : ''}`}
                 aria-pressed={filter === cat}
               >
@@ -412,6 +412,25 @@ function Index() {
               <div>
                 <h3>{active.name}</h3>
                 <p>{active.detail}</p>
+                <small>{(selected ?? 0) + 1} de {filteredProducts.length} produtos nesta categoria</small>
+              </div>
+              <div className="modal-navigation" aria-label="Navegar pelos produtos">
+                <button
+                  type="button"
+                  className="modal-nav"
+                  aria-label="Produto anterior"
+                  onClick={() => setSelected((current) => current === null ? 0 : (current - 1 + filteredProducts.length) % filteredProducts.length)}
+                >
+                  <ChevronLeft size={22} aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  className="modal-nav"
+                  aria-label="Próximo produto"
+                  onClick={() => setSelected((current) => current === null ? 0 : (current + 1) % filteredProducts.length)}
+                >
+                  <ChevronRight size={22} aria-hidden="true" />
+                </button>
               </div>
             </div>
           </article>
