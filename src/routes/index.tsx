@@ -20,9 +20,9 @@ import kidsPhoto from '@/assets/IMG-20261006-WA0026.jpg.asset.json';
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
-    { title: 'Criando 3D | Menos telas, mais brincadeira de papel' },
+    { title: "Samara Criar Art's | Menos telas, mais brincadeira de papel" },
     { name: 'description', content: 'Descubra um mundo de casinhas, personagens e brinquedos de papel. Imprima, recorte, monte e transforme tempo longe das telas em imaginação.' },
-    { property: 'og:title', content: 'Criando 3D | A diversão começa no papel' },
+    { property: 'og:title', content: "Samara Criar Art's | A diversão começa no papel" },
     { property: 'og:description', content: 'Casinhas encantadas e brinquedos de papel para imprimir, montar e brincar em família.' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -59,7 +59,7 @@ const faqs = [
  ['Posso imprimir mais de uma vez?', 'Sim, os arquivos podem ser impressos novamente para uso pessoal. Assim, a brincadeira pode recomeçar com novas histórias.'],
  ['Posso acessar pelo celular?', 'Sim, os arquivos digitais podem ser acessados por celular ou computador. Para montar os brinquedos, é necessário imprimi-los.'],
 ];
-function Logo() { return <a href="#inicio" className="logo" aria-label="Criando 3D, início"><span className="logo-mark"><House size={25} strokeWidth={2.2}/></span><span>criando<span className="text-primary">3D</span><span className="text-aqua">.</span></span></a>; }
+function Logo() { return <a href="#inicio" className="logo" aria-label="Samara Criar Art's, início"><span className="logo-mark"><House size={22} strokeWidth={2.2}/></span><span className="logo-word">Samara<span className="text-primary"> Criar</span><span className="text-aqua"> Art's</span></span></a>; }
 const checkoutUrl = 'https://pay.wiapy.com/MwhZ2YuYJPKY';
 function CollectionCTA() {
   return <><Button variant="playful" size="lg" className="h-13 px-7 text-sm" asChild><a href={checkoutUrl} target="_blank" rel="noopener noreferrer"><Heart size={18}/> Quero a coleção completa <ArrowRight size={18}/></a></Button><div className="trust-line"><LockKeyhole size={12}/> Produto digital <span>•</span> Imprima e monte em casa</div></>;
@@ -88,7 +88,7 @@ function Index() {
       <section id="oferta" className="section offer-section"><div className="container-site offer-layout"><div className="offer-story"><div className="eyebrow"><Sparkles size={15}/> A criatividade sai do papel</div><h2>Hoje pode ser<br/><span className="text-primary">um dia de criar.</span></h2><p>Em vez de “só mais um vídeo”, que tal “vamos montar juntos”? Separe o papel, a tesoura e um tempo para estar presente. O resto é imaginação.</p><div className="flex items-center gap-3 justify-center sm:justify-start mt-6 text-sm font-bold text-accent-foreground"><PackageOpen size={22}/> Digital para você. Diversão para toda a família.</div><img src={rooms.url} alt="Quatro ambientes coloridos de papel montados: banheiro, cozinha, sala e quarto" loading="lazy"/></div><div className="offer-card"><div className="offer-ribbon">✦ COLEÇÃO COMPLETA · UM MUNDO PARA CRIAR ✦</div><div className="offer-body"><h3>Seu próximo momento de diversão</h3><ul className="offer-list"><li><Check/> Brinquedos de papel para imprimir</li><li><Check/> Casinhas e ambientes em miniatura</li><li><Check/> Personagens para inventar histórias</li><li><Check/> Móveis e acessórios para montar</li><li><Check/> Arquivos digitais para uso pessoal</li></ul><div className="price-area"><p>Coleção digital · valor do site de referência</p><div className="price"><small>R$</small> 14,99</div><p>Pagamento único</p><div className="center-cta mt-5"><CollectionCTA/></div></div></div></div></section>
       <section id="duvidas" className="section container-site"><div className="section-heading"><div className="eyebrow"><Plus size={15}/> Antes de começar</div><h2>Uma dúvida por aí?</h2><p>Vamos deixar tudo prontinho para a sua próxima criação.</p></div><div className="faq-wrap">{faqs.map(([question,answer])=><details className="faq-item" key={question}><summary>{question}<Plus/></summary><p>{answer}</p></details>)}</div></section>
     </main>
-    <footer className="footer"><div className="container-site footer-inner"><Logo/><p>Pequenos mundos feitos de papel. Grandes momentos feitos juntos.<br/>© 2026 Criando 3D · Produto digital</p><div className="flex items-center gap-2 text-xs text-muted-foreground"><Heart size={15} className="text-primary"/> Feito para imaginar</div></div></footer>
+    <footer className="footer"><div className="container-site footer-inner"><Logo/><p>Pequenos mundos feitos de papel. Grandes momentos feitos juntos.<br/>© 2026 Samara Criar Art's · Produto digital</p><div className="flex items-center gap-2 text-xs text-muted-foreground"><Heart size={15} className="text-primary"/> Feito para imaginar</div></div></footer>
     {active && <div className="modal-overlay" onClick={()=>setSelected(null)}><div className="image-modal" role="dialog" aria-modal="true" aria-label={active.name} onClick={event=>event.stopPropagation()}><Button variant="secondary" size="icon" className="modal-close" aria-label="Fechar imagem" autoFocus onClick={()=>setSelected(null)}><X/></Button><img src={active.image} alt={active.name}/><div className="modal-caption"><h3>{active.name}</h3><div className="flex gap-2"><Button variant="outline" size="icon" aria-label="Imagem anterior" onClick={()=>setSelected(((selected ?? 0)-1+products.length)%products.length)}><ChevronLeft/></Button><Button variant="outline" size="icon" aria-label="Próxima imagem" onClick={()=>setSelected(((selected ?? 0)+1)%products.length)}><ChevronRight/></Button></div></div></div></div>}
 
   </>;
