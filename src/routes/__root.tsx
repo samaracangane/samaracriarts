@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
@@ -14,6 +15,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 const META_PIXEL_ID = "1588787409405169";
+const GOOGLE_ANALYTICS_ID = "G-KEEXKP2QEC";
 
 declare global {
   interface Window {
@@ -26,7 +28,43 @@ declare global {
     };
     _fbq?: Window["fbq"];
     __samaraMetaPixelInitialized?: boolean;
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+    __samaraGoogleAnalyticsInitialized?: boolean;
   }
+}
+
+function GoogleAnalytics() {
+  const locationHref = useRouterState({ select: (state) => state.location.href });
+
+  useEffect(() => {
+    if (!window.__samaraGoogleAnalyticsInitialized) {
+      window.__samaraGoogleAnalyticsInitialized = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function (...args: unknown[]) {
+        window.dataLayer?.push(args);
+      };
+
+      window.gtag("js", new Date());
+      window.gtag("config", GOOGLE_ANALYTICS_ID, { send_page_view: false });
+
+      if (!document.getElementById("google-analytics-script")) {
+        const script = document.createElement("script");
+        script.async = true;
+        script.id = "google-analytics-script";
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`;
+        document.head.appendChild(script);
+      }
+    }
+
+    window.gtag?.("event", "page_view", {
+      page_location: window.location.href,
+      page_path: window.location.pathname + window.location.search,
+      page_title: document.title,
+    });
+  }, [locationHref]);
+
+  return null;
 }
 
 function MetaPixel() {
@@ -153,6 +191,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
         <MetaPixel />
+        <GoogleAnalytics />
       </head>
       <body>
         {children}
