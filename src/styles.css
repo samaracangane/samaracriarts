@@ -1279,3 +1279,49 @@
     transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
   }
 }
+
+
+/* Catálogo em faixa horizontal: imagens lado a lado, com deslize no celular */
+#colecao .product-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(250px, 29%);
+  grid-template-columns: unset;
+  gap: 22px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 4px 24px;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 4px;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #e98cbe #fdeaf4;
+}
+#colecao .product-grid > .product {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+#colecao .product-image-wrap {
+  overflow: hidden;
+}
+#colecao .product-image-button img {
+  transition: transform .3s ease;
+}
+#colecao .product-image-button:hover img {
+  transform: scale(1.04);
+}
+@media (max-width: 900px) {
+  #colecao .product-grid {
+    grid-auto-columns: minmax(235px, 42%);
+    gap: 16px;
+  }
+}
+@media (max-width: 600px) {
+  #colecao .product-grid {
+    grid-auto-columns: minmax(78%, 78%);
+    gap: 14px;
+    margin-inline: -4px;
+    padding-bottom: 20px;
+  }
+}
