@@ -1,4 +1,7 @@
 # Site Samara Criar Art's
+- [ ] Reformular apresentação mantendo produtos, fotos, preço e checkout.
+- [ ] Conferir integração GitHub, acessibilidade, Pixel e prévia atualizada.
+- [ ] Verificar catálogo, galeria, FAQ, links, testes e lint.
 - [x] Criar página inspirada no modelo com paleta rosa, amarelo e verde-água.
 - [x] Incluir as nove imagens, galeria e perguntas frequentes.
 - [x] Verificar navegação e visualização.

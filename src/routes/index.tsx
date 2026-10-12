@@ -1,69 +1,226 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { useEffect, useState } from 'react';
-import { ArrowRight, Check, ChevronLeft, ChevronRight, Download, Heart, House, Palette, Printer, Scissors, Sparkles, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import pinkHouse from '@/assets/1613852601-1281479777.jpg.asset.json';
-import kittyRoom from '@/assets/97f56883c249237d2e342d7d2f99bb22.jpg.asset.json';
-import kittyHouse from '@/assets/file_000000009960820e9a03979a9bd3ae56.png.asset.json';
-import dollHouse from '@/assets/file_000000007a28820eacab5931d1243e1d.png.asset.json';
-import fairyHouse from '@/assets/file_00000000c5a8820eab2e83c2bb1f043d.png.asset.json';
-import purpleHouse from '@/assets/1613852601-206645978.jpg.asset.json';
-import kitchen from '@/assets/16138526011101468689.jpg.asset.json';
-import livingRoom from '@/assets/1613852601322581794.jpg.asset.json';
-import rooms from '@/assets/16138526011870265434.jpg.asset.json';
-import peppaPig from '@/assets/IMG-20261006-WA0024.jpg.asset.json';
-import redTruck from '@/assets/IMG-20261006-WA0025.jpg.asset.json';
-import hulkHero from '@/assets/IMG-20261006-WA0020.jpg.asset.json';
-import pikachu from '@/assets/IMG-20261006-WA0021.jpg.asset.json';
-import bluey from '@/assets/IMG-20261006-WA0022.jpg.asset.json';
+import { createFileRoute } from "@tanstack/react-router";
+import { useRef, useState } from "react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import {
+  ArrowRight,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Download,
+  Heart,
+  House,
+  Palette,
+  Printer,
+  Scissors,
+  Sparkles,
+  X,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import pinkHouse from "@/assets/1613852601-1281479777.jpg.asset.json";
+import kittyRoom from "@/assets/97f56883c249237d2e342d7d2f99bb22.jpg.asset.json";
+import kittyHouse from "@/assets/file_000000009960820e9a03979a9bd3ae56.png.asset.json";
+import dollHouse from "@/assets/file_000000007a28820eacab5931d1243e1d.png.asset.json";
+import fairyHouse from "@/assets/file_00000000c5a8820eab2e83c2bb1f043d.png.asset.json";
+import purpleHouse from "@/assets/1613852601-206645978.jpg.asset.json";
+import kitchen from "@/assets/16138526011101468689.jpg.asset.json";
+import livingRoom from "@/assets/1613852601322581794.jpg.asset.json";
+import rooms from "@/assets/16138526011870265434.jpg.asset.json";
+import peppaPig from "@/assets/IMG-20261006-WA0024.jpg.asset.json";
+import redTruck from "@/assets/IMG-20261006-WA0025.jpg.asset.json";
+import hulkHero from "@/assets/IMG-20261006-WA0020.jpg.asset.json";
+import pikachu from "@/assets/IMG-20261006-WA0021.jpg.asset.json";
+import bluey from "@/assets/IMG-20261006-WA0022.jpg.asset.json";
+import kidsPhoto from "@/assets/IMG-20261006-WA0026.jpg.asset.json";
 
-export const Route = createFileRoute('/')({
-  head: () => ({ meta: [
-    { title: "Samara Criar Art's | Brinquedos de Papel para Imprimir" },
-    { name: 'description', content: 'Coleção de casinhas, personagens e brinquedos de papel digitais. Imprima, recorte, monte e transforme tempo longe das telas em imaginação e criatividade em família.' },
-    { property: 'og:title', content: "Samara Criar Art's — Brinquedos de Papel" },
-    { property: 'og:description', content: 'Coleção completa de brinquedos de papel digitais para imprimir, recortar, montar e brincar.' },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-  ] }),
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Samara Criar Art's | Brinquedos de Papel para Imprimir" },
+      {
+        name: "description",
+        content:
+          "Coleção de casinhas, personagens e brinquedos de papel digitais. Imprima, recorte, monte e transforme tempo longe das telas em imaginação e criatividade em família.",
+      },
+      { property: "og:title", content: "Samara Criar Art's — Brinquedos de Papel" },
+      {
+        property: "og:description",
+        content:
+          "Coleção completa de brinquedos de papel digitais para imprimir, recortar, montar e brincar.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:locale", content: "pt_BR" },
+      { name: "twitter:title", content: "Samara Criar Art's | Brinquedos de Papel para Imprimir" },
+      {
+        name: "twitter:description",
+        content:
+          "Arquivos digitais para imprimir, recortar, montar e brincar. Não há envio de brinquedos físicos.",
+      },
+    ],
+  }),
   component: Index,
 });
 
 const products = [
-  { name: 'Casinha Hello Kitty', detail: 'Um mundo de laços e fofura', category: 'Casinhas', image: kittyHouse.url, tag: 'CHEIA DE FOFURA' },
-  { name: 'Casinha de Boneca', detail: 'Pequena casa, grandes histórias', category: 'Casinhas', image: dollHouse.url, tag: 'PARA IMAGINAR' },
-  { name: 'Casinha de Fada', detail: 'Um cantinho cheio de magia', category: 'Casinhas', image: fairyHouse.url, tag: 'MUNDO ENCANTADO' },
-  { name: 'Chalé Cor-de-rosa', detail: 'Detalhes que encantam', category: 'Casinhas', image: pinkHouse.url, tag: 'MINIATURA 3D' },
-  { name: 'Quarto Hello Kitty', detail: 'Um quarto dos sonhos', category: 'Ambientes', image: kittyRoom.url, tag: 'RECORTE E MONTE' },
-  { name: 'Chalé Lilás', detail: 'Uma nova história a cada dia', category: 'Casinhas', image: purpleHouse.url, tag: 'MINIATURA 3D' },
-  { name: 'Cozinha em Miniatura', detail: 'Pequenos detalhes, muita diversão', category: 'Detalhes', image: kitchen.url, tag: 'MÓVEIS DE PAPEL' },
-  { name: 'Sala de Estar', detail: 'Um cantinho para reunir a turma', category: 'Ambientes', image: livingRoom.url, tag: 'MONTE SEU MUNDO' },
-  { name: 'Coleção de Ambientes', detail: 'Cada cômodo, uma brincadeira', category: 'Ambientes', image: rooms.url, tag: 'VÁRIOS AMBIENTES' },
-  { name: 'Peppa Pig e seu Ônibus', detail: 'A turma favorita em papel', category: 'Personagens', image: peppaPig.url, tag: 'RECORTE E MONTE' },
-  { name: 'Picape Esportiva', detail: 'Corridas pela sala de estar', category: 'Veículos', image: redTruck.url, tag: 'MINIATURA 3D' },
-  { name: 'Herói Esmagador', detail: 'Fúria verde para salvar o dia', category: 'Personagens', image: hulkHero.url, tag: 'MUNDO DOS HERÓIS' },
-  { name: 'Amigo Elétrico', detail: 'O personagem amarelo favorito', category: 'Personagens', image: pikachu.url, tag: 'CHEIA DE FOFURA' },
-  { name: 'Dupla Aventureira', detail: 'Irmãs cachorras cheias de ideias', category: 'Personagens', image: bluey.url, tag: 'PARA IMAGINAR' },
+  {
+    name: "Casinha Hello Kitty",
+    detail: "Um mundo de laços e fofura",
+    category: "Casinhas",
+    image: kittyHouse.url,
+    tag: "CHEIA DE FOFURA",
+  },
+  {
+    name: "Casinha de Boneca",
+    detail: "Pequena casa, grandes histórias",
+    category: "Casinhas",
+    image: dollHouse.url,
+    tag: "PARA IMAGINAR",
+  },
+  {
+    name: "Casinha de Fada",
+    detail: "Um cantinho cheio de magia",
+    category: "Casinhas",
+    image: fairyHouse.url,
+    tag: "MUNDO ENCANTADO",
+  },
+  {
+    name: "Chalé Cor-de-rosa",
+    detail: "Detalhes que encantam",
+    category: "Casinhas",
+    image: pinkHouse.url,
+    tag: "MINIATURA 3D",
+  },
+  {
+    name: "Quarto Hello Kitty",
+    detail: "Um quarto dos sonhos",
+    category: "Ambientes",
+    image: kittyRoom.url,
+    tag: "RECORTE E MONTE",
+  },
+  {
+    name: "Chalé Lilás",
+    detail: "Uma nova história a cada dia",
+    category: "Casinhas",
+    image: purpleHouse.url,
+    tag: "MINIATURA 3D",
+  },
+  {
+    name: "Cozinha em Miniatura",
+    detail: "Pequenos detalhes, muita diversão",
+    category: "Detalhes",
+    image: kitchen.url,
+    tag: "MÓVEIS DE PAPEL",
+  },
+  {
+    name: "Sala de Estar",
+    detail: "Um cantinho para reunir a turma",
+    category: "Ambientes",
+    image: livingRoom.url,
+    tag: "MONTE SEU MUNDO",
+  },
+  {
+    name: "Coleção de Ambientes",
+    detail: "Cada cômodo, uma brincadeira",
+    category: "Ambientes",
+    image: rooms.url,
+    tag: "VÁRIOS AMBIENTES",
+  },
+  {
+    name: "Peppa Pig e seu Ônibus",
+    detail: "A turma favorita em papel",
+    category: "Personagens",
+    image: peppaPig.url,
+    tag: "RECORTE E MONTE",
+  },
+  {
+    name: "Picape Esportiva",
+    detail: "Corridas pela sala de estar",
+    category: "Veículos",
+    image: redTruck.url,
+    tag: "MINIATURA 3D",
+  },
+  {
+    name: "Herói Esmagador",
+    detail: "Fúria verde para salvar o dia",
+    category: "Personagens",
+    image: hulkHero.url,
+    tag: "MUNDO DOS HERÓIS",
+  },
+  {
+    name: "Amigo Elétrico",
+    detail: "O personagem amarelo favorito",
+    category: "Personagens",
+    image: pikachu.url,
+    tag: "CHEIA DE FOFURA",
+  },
+  {
+    name: "Dupla Aventureira",
+    detail: "Irmãs cachorras cheias de ideias",
+    category: "Personagens",
+    image: bluey.url,
+    tag: "PARA IMAGINAR",
+  },
 ];
 
-const categories = ['Todos', 'Casinhas', 'Ambientes', 'Personagens', 'Veículos', 'Detalhes'];
+const categories = ["Todos", "Casinhas", "Ambientes", "Personagens", "Veículos", "Detalhes"];
 
 const benefits = [
-  { icon: 'Printer', title: 'Pronto para Imprimir', description: 'Arquivos digitais para imprimir em casa. Confira os detalhes de cada modelo antes de comprar.' },
-  { icon: 'Scissors', title: 'Fácil de Montar', description: 'Recorte e monte as peças conforme as orientações disponíveis em cada modelo.' },
-  { icon: 'Heart', title: 'Tempo em Família', description: 'Uma atividade que une gerações ao redor da criatividade.' },
-  { icon: 'Download', title: 'Formato Digital', description: 'Arquivos digitais para imprimir e montar em casa.' }
+  {
+    icon: "Printer",
+    title: "Pronto para Imprimir",
+    description:
+      "Arquivos digitais para imprimir em casa. Confira os detalhes de cada modelo antes de comprar.",
+  },
+  {
+    icon: "Scissors",
+    title: "Recorte e Monte",
+    description: "Recorte e monte as peças conforme as orientações disponíveis em cada modelo.",
+  },
+  {
+    icon: "Heart",
+    title: "Tempo em Família",
+    description: "Uma atividade que une gerações ao redor da criatividade.",
+  },
+  {
+    icon: "Download",
+    title: "Formato Digital",
+    description: "Arquivos digitais para imprimir e montar em casa.",
+  },
 ];
 
 const faqs = [
-  ['Os arquivos são digitais?', 'Sim. Este produto é digital: você compra arquivos para imprimir, não um brinquedo físico enviado pelos Correios. Confira no checkout as condições de acesso aos arquivos.'],
-  ['Como recebo os arquivos?', 'Os produtos são digitais. Antes de finalizar a compra, confira no checkout as condições e instruções de acesso aos arquivos.'],
-  ['Preciso de uma impressora colorida?', 'Confira a descrição do modelo escolhido para verificar os requisitos de impressão e os materiais necessários.'],
-  ['Como monto os brinquedos?', 'A proposta é imprimir, recortar e montar as peças. Confira a descrição do modelo escolhido para verificar as orientações específicas de montagem.'],
-  ['Posso imprimir mais de uma vez?', 'Consulte as condições de uso e impressão informadas junto ao produto antes de comprar.'],
-  ['Como acesso os arquivos no celular?', 'Consulte as instruções de acesso informadas no checkout após escolher o produto. Para brincar com o modelo em papel, será necessário imprimir as peças.'],
-  ['Como funciona o pagamento?', 'O pagamento é realizado pelo checkout atual. Confira nele as formas de pagamento e as condições apresentadas antes de concluir a compra.'],
-  ['O produto é físico?', 'Não. Você está comprando arquivos digitais para imprimir. Nenhum brinquedo físico será enviado pelos Correios.']
+  [
+    "Os arquivos são digitais?",
+    "Sim. Este produto é digital: você compra arquivos para imprimir, não um brinquedo físico enviado pelos Correios. Confira no checkout as condições de acesso aos arquivos.",
+  ],
+  [
+    "Como recebo os arquivos?",
+    "Os produtos são digitais. Antes de finalizar a compra, confira no checkout as condições e instruções de acesso aos arquivos.",
+  ],
+  [
+    "Preciso de uma impressora colorida?",
+    "Confira a descrição do modelo escolhido para verificar os requisitos de impressão e os materiais necessários.",
+  ],
+  [
+    "Como monto os brinquedos?",
+    "A proposta é imprimir, recortar e montar as peças. Confira a descrição do modelo escolhido para verificar as orientações específicas de montagem.",
+  ],
+  [
+    "Posso imprimir mais de uma vez?",
+    "Consulte as condições de uso e impressão informadas junto ao produto antes de comprar.",
+  ],
+  [
+    "Como acesso os arquivos no celular?",
+    "Consulte as instruções de acesso informadas no checkout após escolher o produto. Para brincar com o modelo em papel, será necessário imprimir as peças.",
+  ],
+  [
+    "Como funciona o pagamento?",
+    "O pagamento é realizado pelo checkout atual. Confira nele as formas de pagamento e as condições apresentadas antes de concluir a compra.",
+  ],
+  [
+    "O produto é físico?",
+    "Não. Você está comprando arquivos digitais para imprimir. Nenhum brinquedo físico será enviado pelos Correios.",
+  ],
 ];
 
 function Logo() {
@@ -77,46 +234,50 @@ function Logo() {
   );
 }
 
-const checkoutUrl = 'https://pay.wiapy.com/MwhZ2YuYJPKY';
+const checkoutUrl = "https://pay.wiapy.com/MwhZ2YuYJPKY";
 
 function Index() {
-  const [filter, setFilter] = useState('Todos');
+  const [filter, setFilter] = useState("Todos");
   const [selected, setSelected] = useState<number | null>(null);
+  const galleryTrigger = useRef<HTMLButtonElement | null>(null);
 
-  useEffect(() => {
-    if (selected === null) return;
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    const close = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setSelected(null);
-      }
-    };
-    document.addEventListener('keydown', close);
-    return () => {
-      document.body.style.overflow = previous;
-      document.removeEventListener('keydown', close);
-    };
-  }, [selected]);
-
-  const filteredProducts = filter === 'Todos' ? products : products.filter((product) => product.category === filter);
+  const filteredProducts =
+    filter === "Todos" ? products : products.filter((product) => product.category === filter);
   const active = selected === null ? null : filteredProducts[selected];
+  const navigateGallery = (direction: number) =>
+    setSelected((current) =>
+      current === null
+        ? 0
+        : (current + direction + filteredProducts.length) % filteredProducts.length,
+    );
 
   return (
     <>
+      <a href="#conteudo" className="skip-link">
+        Ir para o conteúdo
+      </a>
       <div id="inicio" className="promo-bar">
-        MENOS TELAS <span className="mx-2">•</span> MAIS BRINCADEIRA <span className="mx-2">•</span> BRINQUEDOS DE PAPEL PARA CRIAR JUNTOS
+        MENOS TELAS <span className="mx-2">•</span> MAIS BRINCADEIRA <span className="mx-2">•</span>{" "}
+        BRINQUEDOS DE PAPEL PARA CRIAR JUNTOS
       </div>
 
       <header className="site-header" role="banner">
         <div className="container-site header-inner">
           <Logo />
           <nav className="desktop-nav" aria-label="Menu principal">
-            <a className="nav-link" href="#o-que-e">O que é</a>
-            <a className="nav-link" href="#colecao">Coleção</a>
-            <a className="nav-link" href="#como-funciona">Como funciona</a>
-            <a className="nav-link" href="#duvidas">Dúvidas</a>
-            <Button variant="playful" size="sm" className="ml-4" asChild>
+            <a className="nav-link" href="#o-que-e">
+              O que é
+            </a>
+            <a className="nav-link" href="#colecao">
+              Coleção
+            </a>
+            <a className="nav-link" href="#como-funciona">
+              Como funciona
+            </a>
+            <a className="nav-link" href="#duvidas">
+              Dúvidas
+            </a>
+            <Button variant="pink" size="sm" asChild>
               <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
                 Comprar agora
               </a>
@@ -125,42 +286,58 @@ function Index() {
         </div>
       </header>
 
-      <main>
+      <main id="conteudo">
         <section className="hero" aria-labelledby="hero-title">
           <img
             className="hero-image"
             src={kittyHouse.url}
             alt="Casinha de papel Hello Kitty com quarto, banheiro, sala, cozinha e móveis detalhados para montar"
             fetchPriority="high"
+            decoding="async"
           />
           <div className="container-site hero-content">
             <div className="hero-copy">
               <p className="eyebrow">
-                <Sparkles size={15} aria-hidden="true" /> Brinquedos de papel
+                <Sparkles size={15} aria-hidden="true" /> Imaginação fora das telas
               </p>
               <h1 id="hero-title">
-                Imprima, recorte, <span>monte</span> e <span>brinque</span> juntos
+                Brinquedos de papel.
+                <br />
+                <span>Grandes histórias.</span>
               </h1>
               <p className="hero-description">
-                Uma coleção de casinhas, personagens e brinquedos em papel para imprimir, recortar, montar e brincar.
+                Troque um tempo de tela por um momento de criação. Casinhas, personagens e
+                brinquedos digitais para imprimir, recortar, montar e brincar juntos.
               </p>
               <div className="hero-tags">
                 <span>
                   <Download size={15} aria-hidden="true" /> Arquivo digital
                 </span>
                 <span>
-                  <Heart size={15} aria-hidden="true" /> Presentes que unem
+                  <Heart size={15} aria-hidden="true" /> 14 modelos para criar
                 </span>
               </div>
+              <div className="hero-actions">
+                <Button variant="pink" size="lg" asChild>
+                  <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+                    Comprar coleção · R$ 14,99
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </a>
+                </Button>
+                <Button variant="link" asChild>
+                  <a href="#colecao">
+                    Explorar os modelos <ChevronRight aria-hidden="true" />
+                  </a>
+                </Button>
+              </div>
               <p className="trust-line">
-                <Check size={16} aria-hidden="true" /> Produto digital, sem envio de item físico
+                <Download size={20} aria-hidden="true" />{" "}
+                <span>
+                  <strong>Você recebe arquivos digitais.</strong>
+                  <br />
+                  Não são brinquedos físicos enviados pelos Correios.
+                </span>
               </p>
-              <Button variant="playful" size="lg" className="mt-6" asChild>
-                <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
-                  <Heart size={18} aria-hidden="true" /> Quero a coleção completa
-                  <ArrowRight size={18} aria-hidden="true" />
-                </a>
-              </Button>
             </div>
           </div>
         </section>
@@ -193,17 +370,47 @@ function Index() {
               </p>
               <h2 id="pitch-title">Uma coleção digital completa</h2>
               <p>
-                A coleção reúne arquivos digitais em PDF para imprimir. Consulte a descrição de cada produto e as condições de acesso apresentadas no checkout antes de finalizar a compra.
+                Pequenos mundos que começam com papel e imaginação. A coleção reúne arquivos
+                digitais em PDF para imprimir, recortar e montar em casa.
               </p>
               <ul className="pitch-points">
-                <li><Check size={15} aria-hidden="true" /> 14 modelos diferentes</li>
-                              </ul>
+                <li>
+                  <Check size={15} aria-hidden="true" /> 14 modelos diferentes
+                </li>
+                <li>
+                  <Download size={15} aria-hidden="true" /> Arquivos digitais
+                </li>
+              </ul>
+              <p className="conditions-note">
+                Confira a descrição dos produtos e as condições de acesso no checkout antes de
+                comprar.
+              </p>
             </div>
             <div className="pitch-mosaic">
-              <img src={kittyHouse.url} alt="Casinha Hello Kitty montada com detalhes de móveis" />
-              <img src={dollHouse.url} alt="Casinha de boneca em três dimensões" />
-              <img src={fairyHouse.url} alt="Casinha de fada colorida e encantada" />
-              <img src={peppaPig.url} alt="Peppa Pig e personagens em papel" />
+              <img
+                src={kittyHouse.url}
+                alt="Casinha Hello Kitty montada com detalhes de móveis"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src={dollHouse.url}
+                alt="Casinha de boneca em três dimensões"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src={fairyHouse.url}
+                alt="Casinha de fada colorida e encantada"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src={peppaPig.url}
+                alt="Peppa Pig e personagens em papel"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </section>
@@ -219,23 +426,45 @@ function Index() {
 
           <div className="filter-row" role="group" aria-label="Filtrar produtos por categoria">
             {categories.map((cat) => (
-              <button
+              <Button
+                variant={filter === cat ? "selected" : "filter"}
                 key={cat}
-                onClick={() => { setFilter(cat); setSelected(null); }}
-                className={`filter-btn ${filter === cat ? 'active' : ''}`}
+                onClick={() => {
+                  setFilter(cat);
+                  setSelected(null);
+                }}
+                className={`filter-btn ${filter === cat ? "active" : ""}`}
                 aria-pressed={filter === cat}
               >
                 {cat}
-              </button>
+              </Button>
             ))}
           </div>
 
+          <p className="catalog-count" role="status" aria-live="polite">
+            {filteredProducts.length} modelos{" "}
+            {filter === "Todos" ? "na coleção" : `em ${filter.toLowerCase()}`}
+          </p>
           <div className="product-grid">
             {filteredProducts.map((product, index) => (
               <article key={product.name} className="product">
                 <div className="product-image-wrap">
-                  <img src={product.image} alt={product.name} loading="lazy" />
-                  <span className="product-tag">{product.tag}</span>
+                  <Button
+                    variant="ghost"
+                    className="product-image-button"
+                    onClick={(event) => {
+                      galleryTrigger.current = event.currentTarget;
+                      setSelected(index);
+                    }}
+                    aria-label={`Ampliar imagem de ${product.name}`}
+                  >
+                    <img
+                      src={product.image}
+                      alt={`${product.name}, modelo de papel montado`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </Button>
                 </div>
                 <div className="product-info">
                   <div>
@@ -243,13 +472,18 @@ function Index() {
                     <p>{product.detail}</p>
                     <span className="product-category">{product.category}</span>
                   </div>
-                  <button
-                    onClick={() => setSelected(filteredProducts.findIndex((item) => item.name === product.name))}
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={(event) => {
+                      galleryTrigger.current = event.currentTarget;
+                      setSelected(index);
+                    }}
                     className="view-button"
                     aria-label={`Ver detalhes de ${product.name}`}
                   >
                     <ChevronRight size={20} aria-hidden="true" />
-                  </button>
+                  </Button>
                 </div>
               </article>
             ))}
@@ -265,13 +499,17 @@ function Index() {
           </div>
         </section>
 
-        <section id="como-funciona" className="section benefit-band" aria-labelledby="benefits-title">
+        <section
+          id="como-funciona"
+          className="section benefit-band"
+          aria-labelledby="benefits-title"
+        >
           <div className="container-site">
             <div className="section-heading">
               <p className="eyebrow">
-                <Heart size={15} aria-hidden="true" /> O que torna especial
+                <Heart size={15} aria-hidden="true" /> Do papel à brincadeira
               </p>
-              <h2 id="benefits-title">Tudo pensado em você</h2>
+              <h2 id="benefits-title">Um tempo para criar juntos</h2>
               <p>Uma proposta de atividade manual para imprimir, recortar, montar e brincar.</p>
             </div>
 
@@ -306,8 +544,18 @@ function Index() {
               </p>
               <h2 id="offer-title">Mais imaginação em cada montagem</h2>
               <p>
-                Escolha um modelo, imprima as páginas, recorte as peças e monte seu brinquedo de papel. Uma atividade manual para explorar a criatividade e criar novas histórias.
+                Escolha um modelo, imprima as páginas, recorte as peças e monte seu brinquedo de
+                papel. Uma atividade manual para explorar a criatividade e criar novas histórias.
               </p>
+              <figure className="play-photo">
+                <img
+                  src={kidsPhoto.url}
+                  alt="Montagem de fotos de crianças segurando personagens de papel"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>Imprimir. Criar. Inventar novas histórias.</figcaption>
+              </figure>
             </div>
 
             <div className="offer-card">
@@ -315,22 +563,36 @@ function Index() {
                 <strong>COLEÇÃO COMPLETA — 14 MODELOS</strong>
               </div>
               <div className="offer-body">
-                <h3>Tudo que você precisa</h3>
+                <h3>Sua próxima brincadeira começa aqui</h3>
                 <ul className="offer-list">
-                  <li><Check size={18} aria-hidden="true" /> 14 brinquedos diferentes</li>
-                  <li><Check size={18} aria-hidden="true" /> Arquivos digitais para imprimir</li>
-                  <li><Check size={18} aria-hidden="true" /> Modelos para imprimir e montar</li>
-                  <li><Check size={18} aria-hidden="true" /> Produto digital, sem envio físico</li>
+                  <li>
+                    <Check size={18} aria-hidden="true" /> 14 brinquedos diferentes
+                  </li>
+                  <li>
+                    <Check size={18} aria-hidden="true" /> Arquivos digitais para imprimir
+                  </li>
+                  <li>
+                    <Check size={18} aria-hidden="true" /> Casinhas, ambientes, personagens e
+                    veículo
+                  </li>
+                  <li>
+                    <Check size={18} aria-hidden="true" /> Produto digital, sem envio físico
+                  </li>
                 </ul>
                 <div className="price-area">
-                  <p>Investimento na criatividade e na família</p>
-                  <div className="price"><small>R$</small> 14,99</div>
-                  <Button variant="playful" size="lg" className="mt-6 w-full" asChild>
+                  <p>Valor da coleção digital</p>
+                  <div className="price">
+                    <small>R$</small> 14,99
+                  </div>
+                  <Button variant="pink" size="lg" className="mt-6 w-full" asChild>
                     <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
                       Comprar agora
                       <ArrowRight size={18} aria-hidden="true" />
                     </a>
                   </Button>
+                  <p className="conditions-note">
+                    Consulte as formas de pagamento e as condições de acesso no checkout.
+                  </p>
                 </div>
               </div>
             </div>
@@ -362,12 +624,12 @@ function Index() {
         <section className="final-cta" aria-labelledby="final-cta-title">
           <div className="container-site final-inner">
             <h2 id="final-cta-title">
-              Hoje à noite, em vez de mais um vídeo…
+              Menos telas. Mais tempo juntos.
               <br />
-              <span>uma casinha montada com as próprias mãos.</span>
+              <span>A próxima história pode começar no papel.</span>
             </h2>
-            <p>Coleção completa por apenas R$ 14,99</p>
-            <Button variant="primary" size="lg" asChild>
+            <p>14 modelos digitais para imprimir, recortar, montar e brincar · R$ 14,99</p>
+            <Button variant="pink" size="lg" asChild>
               <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
                 Comprar agora
                 <ArrowRight size={18} aria-hidden="true" />
@@ -377,15 +639,22 @@ function Index() {
         </section>
       </main>
 
-      <a className="sticky-buy" href={checkoutUrl} target="_blank" rel="noopener noreferrer" aria-label="Comprar coleção completa">
-        <span>
-          <small>Coleção completa</small>
-          <strong>R$ 14,99</strong>
-        </span>
-        <em>
-          Quero a minha <ArrowRight size={16} aria-hidden="true" />
-        </em>
-      </a>
+      <Button variant="pink" asChild className="sticky-buy">
+        <a
+          href={checkoutUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Comprar coleção digital por R$ 14,99"
+        >
+          <span>
+            <small>Coleção digital</small>
+            <strong>R$ 14,99</strong>
+          </span>
+          <em>
+            Comprar <ArrowRight size={16} aria-hidden="true" />
+          </em>
+        </a>
+      </Button>
 
       <footer className="footer" role="contentinfo">
         <div className="container-site footer-inner">
@@ -402,41 +671,80 @@ function Index() {
         </div>
       </footer>
 
-      {active && (
-        <div className="modal-overlay" onClick={() => setSelected(null)} role="presentation">
-          <article className="image-modal" role="dialog" aria-modal="true" aria-label={active.name} onClick={(event) => event.stopPropagation()}>
-            <button onClick={() => setSelected(null)} className="modal-close" aria-label="Fechar visualização">
-              <X size={28} />
-            </button>
-            <img src={active.image} alt={active.name} />
-            <div className="modal-caption">
-              <div>
-                <h3>{active.name}</h3>
-                <p>{active.detail}</p>
-                <small>{(selected ?? 0) + 1} de {filteredProducts.length} produtos nesta categoria</small>
-              </div>
-              <div className="modal-navigation" aria-label="Navegar pelos produtos">
-                <button
-                  type="button"
-                  className="modal-nav"
-                  aria-label="Produto anterior"
-                  onClick={() => setSelected((current) => current === null ? 0 : (current - 1 + filteredProducts.length) % filteredProducts.length)}
+      <DialogPrimitive.Root
+        open={Boolean(active)}
+        onOpenChange={(open) => {
+          if (!open) setSelected(null);
+        }}
+      >
+        {active && (
+          <DialogPrimitive.Portal>
+            <DialogPrimitive.Overlay className="modal-overlay" />
+            <DialogPrimitive.Content
+              className="image-modal"
+              onCloseAutoFocus={(event) => {
+                event.preventDefault();
+                galleryTrigger.current?.focus();
+              }}
+              onKeyDown={(event) => {
+                if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+                  event.preventDefault();
+                  navigateGallery(event.key === "ArrowLeft" ? -1 : 1);
+                }
+              }}
+            >
+              <DialogPrimitive.Close asChild>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="modal-close"
+                  aria-label="Fechar visualização"
                 >
-                  <ChevronLeft size={22} aria-hidden="true" />
-                </button>
-                <button
-                  type="button"
-                  className="modal-nav"
-                  aria-label="Próximo produto"
-                  onClick={() => setSelected((current) => current === null ? 0 : (current + 1) % filteredProducts.length)}
-                >
-                  <ChevronRight size={22} aria-hidden="true" />
-                </button>
+                  <X size={24} />
+                </Button>
+              </DialogPrimitive.Close>
+              <img
+                src={active.image}
+                alt={`${active.name}, visualização ampliada do modelo de papel`}
+                decoding="async"
+              />
+              <div className="modal-caption">
+                <div>
+                  <DialogPrimitive.Title asChild>
+                    <h3>{active.name}</h3>
+                  </DialogPrimitive.Title>
+                  <DialogPrimitive.Description>{active.detail}</DialogPrimitive.Description>
+                  <small aria-live="polite">
+                    {(selected ?? 0) + 1} de {filteredProducts.length} produtos nesta categoria
+                  </small>
+                </div>
+                <div className="modal-navigation" aria-label="Navegar pelos produtos">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    type="button"
+                    className="modal-nav"
+                    aria-label="Produto anterior"
+                    onClick={() => navigateGallery(-1)}
+                  >
+                    <ChevronLeft size={22} aria-hidden="true" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    type="button"
+                    className="modal-nav"
+                    aria-label="Próximo produto"
+                    onClick={() => navigateGallery(1)}
+                  >
+                    <ChevronRight size={22} aria-hidden="true" />
+                  </Button>
+                </div>
               </div>
-            </div>
-          </article>
-        </div>
-      )}
+            </DialogPrimitive.Content>
+          </DialogPrimitive.Portal>
+        )}
+      </DialogPrimitive.Root>
     </>
   );
 }
@@ -447,5 +755,3 @@ const iconMap = {
   Heart,
   Download,
 };
-
-export { Index };
