@@ -718,6 +718,7 @@ function Index() {
       <Button variant="pink" asChild className={`sticky-buy ${showStickyBuy ? "sticky-buy-visible" : ""}`}>
         <a
           href={checkoutUrl}
+          onClick={trackCheckout}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Comprar coleção digital por R$ 14,99"
