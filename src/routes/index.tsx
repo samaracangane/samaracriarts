@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import {
   ArrowRight,
@@ -236,8 +236,47 @@ function Logo() {
 
 const checkoutUrl = "https://pay.wiapy.com/MwhZ2YuYJPKY";
 
+const COLLECTION_VALUE = 14.99;
+const COLLECTION_NAME = "Coleção de brinquedos de papel";
+
+function trackCheckout() {
+  if (typeof window === "undefined") return;
+
+  window.gtag?.("event", "begin_checkout", {
+    currency: "BRL",
+    value: COLLECTION_VALUE,
+    items: [{ item_id: "colecao-brinquedos-papel", item_name: COLLECTION_NAME, quantity: 1 }],
+  });
+  window.fbq?.("track", "InitiateCheckout", {
+    currency: "BRL",
+    value: COLLECTION_VALUE,
+    content_name: COLLECTION_NAME,
+    content_type: "product",
+  });
+}
+
 function Index() {
   const [filter, setFilter] = useState("Todos");
+  const [showStickyBuy, setShowStickyBuy] = useState(false);
+
+  useEffect(() => {
+    window.gtag?.("event", "view_item", {
+      currency: "BRL",
+      value: COLLECTION_VALUE,
+      items: [{ item_id: "colecao-brinquedos-papel", item_name: COLLECTION_NAME, quantity: 1 }],
+    });
+    window.fbq?.("track", "ViewContent", {
+      currency: "BRL",
+      value: COLLECTION_VALUE,
+      content_name: COLLECTION_NAME,
+      content_type: "product",
+    });
+
+    const updateStickyVisibility = () => setShowStickyBuy(window.scrollY > 420);
+    updateStickyVisibility();
+    window.addEventListener("scroll", updateStickyVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", updateStickyVisibility);
+  }, []);
   const [selected, setSelected] = useState<number | null>(null);
   const galleryTrigger = useRef<HTMLButtonElement | null>(null);
 
@@ -278,7 +317,7 @@ function Index() {
               Dúvidas
             </a>
             <Button variant="pink" size="sm" asChild>
-              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+              <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                 Comprar agora
               </a>
             </Button>
@@ -319,7 +358,7 @@ function Index() {
               </div>
               <div className="hero-actions">
                 <Button variant="pink" size="lg" asChild>
-                  <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+                  <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                     Comprar coleção · R$ 14,99
                     <ArrowRight size={18} aria-hidden="true" />
                   </a>
@@ -528,7 +567,7 @@ function Index() {
 
           <div className="center-cta">
             <Button variant="playful" size="lg" asChild>
-              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+              <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                 <Heart size={18} aria-hidden="true" /> Comprar agora
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
@@ -622,7 +661,7 @@ function Index() {
                     <small>R$</small> 14,99
                   </div>
                   <Button variant="pink" size="lg" className="mt-6 w-full" asChild>
-                    <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                       Comprar agora
                       <ArrowRight size={18} aria-hidden="true" />
                     </a>
@@ -667,7 +706,7 @@ function Index() {
             </h2>
             <p>14 modelos digitais para imprimir, recortar, montar e brincar · R$ 14,99</p>
             <Button variant="pink" size="lg" asChild>
-              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+              <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                 Comprar agora
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
@@ -676,12 +715,14 @@ function Index() {
         </section>
       </main>
 
-      <Button variant="pink" asChild className="sticky-buy">
+      <Button variant="pink" asChild className={`sticky-buy ${showStickyBuy ? "sticky-buy-visible" : ""}`}>
         <a
           href={checkoutUrl}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Comprar coleção digital por R$ 14,99"
+          aria-hidden={!showStickyBuy}
+          tabIndex={showStickyBuy ? 0 : -1}
         >
           <span>
             <small>Coleção digital</small>
