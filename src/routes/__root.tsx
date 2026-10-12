@@ -13,7 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-const META_PIXEL_ID = "26146580185043768";
+const META_PIXEL_ID = "1588787409405169";
 
 declare global {
   interface Window {
