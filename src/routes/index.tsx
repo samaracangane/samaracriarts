@@ -415,6 +415,43 @@ function Index() {
           </div>
         </section>
 
+        <section className="showcase-section" aria-labelledby="showcase-title">
+          <div className="container-site">
+            <div className="section-heading">
+              <p className="eyebrow"><Sparkles size={15} aria-hidden="true" /> Veja de pertinho</p>
+              <h2 id="showcase-title">Um pedacinho da diversão</h2>
+              <p>Deslize para explorar os modelos ou veja as imagens passando em uma vitrine cheia de cor.</p>
+            </div>
+          </div>
+          <div className="moving-gallery" aria-label="Carrossel animado de brinquedos de papel">
+            <div className="moving-gallery-track">
+              {[...products, ...products].map((product, index) => (
+                <figure className="moving-gallery-card" key={`${product.name}-${index}`}>
+                  <img src={product.image} alt={`${product.name} — brinquedo de papel digital`} loading="lazy" decoding="async" />
+                  <figcaption>{product.name}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+          <div className="container-site showcase-details">
+            <div className="showcase-detail">
+              <span className="showcase-number">01</span>
+              <h3>Escolha seu mundo favorito</h3>
+              <p>Explore casinhas, quartos, móveis, veículos e personagens para inventar histórias diferentes.</p>
+            </div>
+            <div className="showcase-detail">
+              <span className="showcase-number">02</span>
+              <h3>Prepare os materiais</h3>
+              <p>Tenha à mão impressora, papel adequado, tesoura e cola conforme as instruções do modelo escolhido.</p>
+            </div>
+            <div className="showcase-detail">
+              <span className="showcase-number">03</span>
+              <h3>Monte e crie histórias</h3>
+              <p>Recorte as peças com a supervisão de um adulto quando necessário e transforme cada montagem em uma nova brincadeira.</p>
+            </div>
+          </div>
+        </section>
+
         <section id="colecao" className="section container-site" aria-labelledby="products-title">
           <div className="section-heading">
             <p className="eyebrow">
