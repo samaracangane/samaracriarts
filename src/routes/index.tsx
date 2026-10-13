@@ -353,7 +353,7 @@ function Index() {
                   <Download size={15} aria-hidden="true" /> Arquivo digital
                 </span>
                 <span>
-                  <Heart size={15} aria-hidden="true" /> 14 modelos para criar
+                  <Heart size={15} aria-hidden="true" /> +200 brinquedos para criar
                 </span>
               </div>
               <div className="hero-actions">
@@ -407,14 +407,14 @@ function Index() {
               <p className="eyebrow">
                 <Sparkles size={15} aria-hidden="true" /> O que você recebe
               </p>
-              <h2 id="pitch-title">Uma coleção digital completa</h2>
+              <h2 id="pitch-title">Mais de 200 brinquedos de papel para imaginar e criar</h2>
               <p>
                 Pequenos mundos que começam com papel e imaginação. A coleção reúne arquivos
                 digitais em PDF para imprimir, recortar e montar em casa.
               </p>
               <ul className="pitch-points">
                 <li>
-                  <Check size={15} aria-hidden="true" /> 14 modelos diferentes
+                  <Check size={15} aria-hidden="true" /> +200 brinquedos de papel
                 </li>
                 <li>
                   <Download size={15} aria-hidden="true" /> Arquivos digitais
@@ -496,8 +496,8 @@ function Index() {
             <p className="eyebrow">
               <Palette size={15} aria-hidden="true" /> Um universo para criar
             </p>
-            <h2 id="products-title">A coleção completa</h2>
-            <p>14 modelos para imprimir, recortar, montar e transformar em brincadeira.</p>
+            <h2 id="products-title">Explore alguns modelos da coleção</h2>
+            <p>Mais de 200 brinquedos de papel para imprimir, recortar, montar e transformar em brincadeira.</p>
           </div>
 
           <div className="filter-row" role="group" aria-label="Filtrar produtos por categoria">
@@ -636,7 +636,7 @@ function Index() {
 
             <div className="offer-card">
               <div className="offer-ribbon">
-                <strong>COLEÇÃO COMPLETA — 14 MODELOS</strong>
+                <strong>COLEÇÃO COM +200 BRINQUEDOS DE PAPEL</strong>
               </div>
               <div className="offer-body">
                 <h3>Sua próxima brincadeira começa aqui</h3>
@@ -704,7 +704,7 @@ function Index() {
               <br />
               <span>A próxima história pode começar no papel.</span>
             </h2>
-            <p>14 modelos digitais para imprimir, recortar, montar e brincar · R$ 14,99</p>
+            <p>+200 brinquedos de papel para imprimir, recortar, montar e brincar · R$ 14,99</p>
             <Button variant="pink" size="lg" asChild>
               <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                 Comprar agora
