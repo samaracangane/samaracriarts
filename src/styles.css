@@ -1753,3 +1753,207 @@
   .hero-product-categories span { min-height: 48px; font-size: 13px; border-radius: 8px; }
   .hero-product-categories b { font-size: 6px; }
 }
+
+
+/* Full sales-page poster layout: pink + aqua */
+.hero-poster-layout {
+  padding: 34px 0 28px;
+  background: linear-gradient(180deg, #fff7fb 0%, #fff 50%, #fff5fa 100%);
+  overflow: hidden;
+}
+.hero-poster-layout .hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.hero-poster-layout .hero-copy {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  align-items: center;
+  gap: 14px;
+}
+.hero-poster-layout .hero-copy .eyebrow,
+.hero-poster-layout .hero-tags,
+.hero-poster-layout .trust-line { display: none; }
+.hero-poster-layout .hero-copy h1 {
+  max-width: 920px;
+  margin: 0 auto;
+  color: #FF1688;
+  font-size: clamp(34px, 5.5vw, 68px);
+  font-weight: 950;
+  line-height: .98;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 3px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff;
+}
+.hero-poster-layout .poster-count {
+  color: #FF1688;
+  -webkit-text-stroke: 2px #38D9C3;
+  text-shadow: 3px 4px 0 #fff, 5px 6px 0 rgb(56 217 195 / 28%);
+  font-size: 1.25em;
+}
+.hero-poster-layout .poster-aqua { color: #13BFAF; }
+.hero-poster-layout .poster-pink-ribbon {
+  display: inline-block;
+  padding: 2px 26px 5px;
+  color: #fff;
+  background: #FF1688;
+  border-radius: 999px;
+  font-size: .72em;
+  letter-spacing: 2px;
+  box-shadow: 0 5px 0 #38D9C3;
+}
+.hero-poster-layout .poster-slogan {
+  margin: 0 auto;
+  padding: 12px 24px;
+  max-width: 900px;
+  border-radius: 999px;
+  background: #13BFAF;
+  color: #fff;
+  font-size: clamp(17px, 2.4vw, 28px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+.hero-poster-layout .poster-description {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #43204F;
+  font-size: clamp(16px, 1.9vw, 22px);
+  font-weight: 650;
+  line-height: 1.45;
+}
+.hero-poster-layout .poster-actions { justify-content: center; margin-top: 2px; }
+.hero-poster-layout .hero-image.hero-product-collage {
+  width: 100%;
+  max-width: 1000px;
+  margin: 4px auto 0;
+  min-height: 450px;
+  padding: 28px 18px 108px;
+  border-radius: 24px;
+  background: transparent;
+  box-shadow: none;
+}
+.hero-poster-layout .hero-product-box {
+  width: 44%;
+  max-width: 420px;
+  min-height: 410px;
+  padding: 18px;
+  border: 4px solid #38D9C3;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #FF1688, #ff4da3 58%, #13BFAF);
+  transform: rotate(-1deg);
+}
+.hero-poster-layout .hero-product-box > img {
+  height: 215px;
+  background: #fff;
+}
+.hero-poster-layout .hero-product-title { font-size: 1.2em; }
+.hero-poster-layout .hero-product-count { font-size: clamp(46px, 6vw, 70px); }
+.hero-poster-layout .hero-product-title > span:nth-child(2) { font-size: clamp(20px, 2.5vw, 30px); }
+.hero-poster-layout .hero-product-aqua { color: #38D9C3; }
+.hero-poster-layout .hero-preview-sheet { width: 28%; max-width: 210px; }
+.hero-poster-layout .hero-preview-sheet img {
+  height: 175px;
+  border: 3px solid #FF1688;
+  border-radius: 14px;
+}
+.hero-poster-layout .hero-product-categories {
+  left: 2%;
+  right: 2%;
+  bottom: 12px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+.hero-poster-layout .hero-product-categories span {
+  min-height: 72px;
+  padding: 8px 4px;
+  border: 2px solid #fff;
+  border-radius: 13px;
+  background: #FF1688;
+  box-shadow: 0 4px 0 #38D9C3;
+}
+.hero-poster-layout .hero-product-categories span:nth-child(even) { background: #13BFAF; }
+.hero-poster-layout .hero-product-categories b { font-size: 10px; }
+.poster-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 980px;
+  width: 100%;
+  margin: 12px auto 0;
+}
+.poster-benefits article {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 112px;
+  padding: 18px 22px;
+  border: 2px solid #F8D6E8;
+  border-radius: 28px;
+  background: rgb(255 245 250 / 88%);
+}
+.poster-benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #13BFAF;
+  color: #fff;
+}
+.poster-benefit-icon.poster-benefit-pink { background: #FF1688; }
+.poster-benefits strong {
+  display: block;
+  color: #43204F;
+  font-size: clamp(14px, 1.6vw, 19px);
+  font-weight: 900;
+  line-height: 1.2;
+}
+.poster-benefits p {
+  margin: 5px 0 0;
+  color: #514456;
+  font-size: 15px;
+  line-height: 1.35;
+}
+@media (max-width: 700px) {
+  .hero-poster-layout { padding: 22px 0 20px; }
+  .hero-poster-layout .hero-content { gap: 12px; }
+  .hero-poster-layout .hero-copy { gap: 12px; }
+  .hero-poster-layout .hero-copy h1 { font-size: clamp(29px, 8.2vw, 43px); letter-spacing: -1px; }
+  .hero-poster-layout .poster-count { -webkit-text-stroke: 1.2px #38D9C3; }
+  .hero-poster-layout .poster-slogan { padding: 10px 14px; font-size: 16px; border-radius: 24px; }
+  .hero-poster-layout .poster-description { font-size: 15px; padding: 0 4px; }
+  .hero-poster-layout .hero-image.hero-product-collage {
+    min-height: 350px;
+    height: 350px;
+    padding: 8px 3px 83px;
+    gap: 3px;
+  }
+  .hero-poster-layout .hero-product-box {
+    width: 49%;
+    min-height: 265px;
+    padding: 10px 7px 7px;
+    border-width: 3px;
+    border-radius: 12px;
+  }
+  .hero-poster-layout .hero-product-count { font-size: 36px; }
+  .hero-poster-layout .hero-product-title > span:nth-child(2) { font-size: 15px; }
+  .hero-poster-layout .hero-product-aqua { font-size: 19px; }
+  .hero-poster-layout .hero-product-3d { font-size: 12px; padding: 3px 12px; }
+  .hero-poster-layout .hero-product-box > img { height: 125px; margin-top: 6px; }
+  .hero-poster-layout .hero-product-footer { font-size: 6.5px; margin-top: 6px; }
+  .hero-poster-layout .hero-preview-sheet { width: 26%; gap: 7px; }
+  .hero-poster-layout .hero-preview-sheet img { height: 90px; border-width: 2px; padding: 3px; }
+  .hero-poster-layout .hero-product-categories { bottom: 8px; left: 0; right: 0; gap: 3px; }
+  .hero-poster-layout .hero-product-categories span { min-height: 55px; padding: 4px 1px; border-radius: 8px; font-size: 12px; }
+  .hero-poster-layout .hero-product-categories b { font-size: 6px; }
+  .poster-benefits { gap: 8px; margin-top: 2px; }
+  .poster-benefits article { min-height: 104px; padding: 11px 9px; gap: 8px; border-radius: 18px; }
+  .poster-benefit-icon { flex-basis: 38px; width: 38px; height: 38px; }
+  .poster-benefit-icon svg { width: 20px; height: 20px; }
+  .poster-benefits strong { font-size: 11px; }
+  .poster-benefits p { font-size: 10px; margin-top: 4px; }
+}
