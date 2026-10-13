@@ -973,6 +973,10 @@
   }
   .sticky-buy {
     display: flex;
+    opacity: 0;
+    transform: translateY(110%);
+    pointer-events: none;
+    transition: opacity 220ms ease, transform 220ms ease;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -988,6 +992,11 @@
     color: var(--foreground);
     border-top: 1px solid var(--border);
     box-shadow: var(--shadow-product);
+  }
+  .sticky-buy.sticky-buy-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
   .sticky-buy:hover {
     background: var(--card);

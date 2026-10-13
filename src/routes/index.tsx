@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import {
   ArrowRight,
@@ -236,8 +236,47 @@ function Logo() {
 
 const checkoutUrl = "https://pay.wiapy.com/MwhZ2YuYJPKY";
 
+const COLLECTION_VALUE = 14.99;
+const COLLECTION_NAME = "Coleção de brinquedos de papel";
+
+function trackCheckout() {
+  if (typeof window === "undefined") return;
+
+  window.gtag?.("event", "begin_checkout", {
+    currency: "BRL",
+    value: COLLECTION_VALUE,
+    items: [{ item_id: "colecao-brinquedos-papel", item_name: COLLECTION_NAME, quantity: 1 }],
+  });
+  window.fbq?.("track", "InitiateCheckout", {
+    currency: "BRL",
+    value: COLLECTION_VALUE,
+    content_name: COLLECTION_NAME,
+    content_type: "product",
+  });
+}
+
 function Index() {
   const [filter, setFilter] = useState("Todos");
+  const [showStickyBuy, setShowStickyBuy] = useState(false);
+
+  useEffect(() => {
+    window.gtag?.("event", "view_item", {
+      currency: "BRL",
+      value: COLLECTION_VALUE,
+      items: [{ item_id: "colecao-brinquedos-papel", item_name: COLLECTION_NAME, quantity: 1 }],
+    });
+    window.fbq?.("track", "ViewContent", {
+      currency: "BRL",
+      value: COLLECTION_VALUE,
+      content_name: COLLECTION_NAME,
+      content_type: "product",
+    });
+
+    const updateStickyVisibility = () => setShowStickyBuy(window.scrollY > 420);
+    updateStickyVisibility();
+    window.addEventListener("scroll", updateStickyVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", updateStickyVisibility);
+  }, []);
   const [selected, setSelected] = useState<number | null>(null);
   const galleryTrigger = useRef<HTMLButtonElement | null>(null);
 
@@ -278,7 +317,7 @@ function Index() {
               Dúvidas
             </a>
             <Button variant="pink" size="sm" asChild>
-              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+              <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                 Comprar agora
               </a>
             </Button>
@@ -301,12 +340,12 @@ function Index() {
                 <Sparkles size={15} aria-hidden="true" /> Imaginação fora das telas
               </p>
               <h1 id="hero-title">
-                Brinquedos de papel.
+                Tire seu filho das telas
                 <br />
-                <span>Grandes histórias.</span>
+                <span>e devolva a magia de brincar!</span>
               </h1>
               <p className="hero-description">
-                Troque um tempo de tela por um momento de criação. Casinhas, personagens e
+                Mais de 200 brinquedos de papel para imprimir, recortar e montar em casa. Uma forma prática e econômica de estimular a imaginação e criar momentos especiais em família. Casinhas, personagens e
                 brinquedos digitais para imprimir, recortar, montar e brincar juntos.
               </p>
               <div className="hero-tags">
@@ -314,12 +353,12 @@ function Index() {
                   <Download size={15} aria-hidden="true" /> Arquivo digital
                 </span>
                 <span>
-                  <Heart size={15} aria-hidden="true" /> 14 modelos para criar
+                  <Heart size={15} aria-hidden="true" /> +200 brinquedos para criar
                 </span>
               </div>
               <div className="hero-actions">
                 <Button variant="pink" size="lg" asChild>
-                  <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+                  <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                     Comprar coleção · R$ 14,99
                     <ArrowRight size={18} aria-hidden="true" />
                   </a>
@@ -368,14 +407,14 @@ function Index() {
               <p className="eyebrow">
                 <Sparkles size={15} aria-hidden="true" /> O que você recebe
               </p>
-              <h2 id="pitch-title">Uma coleção digital completa</h2>
+              <h2 id="pitch-title">Mais de 200 brinquedos de papel para imaginar e criar</h2>
               <p>
                 Pequenos mundos que começam com papel e imaginação. A coleção reúne arquivos
                 digitais em PDF para imprimir, recortar e montar em casa.
               </p>
               <ul className="pitch-points">
                 <li>
-                  <Check size={15} aria-hidden="true" /> 14 modelos diferentes
+                  <Check size={15} aria-hidden="true" /> +200 brinquedos de papel
                 </li>
                 <li>
                   <Download size={15} aria-hidden="true" /> Arquivos digitais
@@ -457,8 +496,8 @@ function Index() {
             <p className="eyebrow">
               <Palette size={15} aria-hidden="true" /> Um universo para criar
             </p>
-            <h2 id="products-title">A coleção completa</h2>
-            <p>14 modelos para imprimir, recortar, montar e transformar em brincadeira.</p>
+            <h2 id="products-title">Explore alguns modelos da coleção</h2>
+            <p>Mais de 200 brinquedos de papel para imprimir, recortar, montar e transformar em brincadeira.</p>
           </div>
 
           <div className="filter-row" role="group" aria-label="Filtrar produtos por categoria">
@@ -528,7 +567,7 @@ function Index() {
 
           <div className="center-cta">
             <Button variant="playful" size="lg" asChild>
-              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+              <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                 <Heart size={18} aria-hidden="true" /> Comprar agora
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
@@ -597,13 +636,13 @@ function Index() {
 
             <div className="offer-card">
               <div className="offer-ribbon">
-                <strong>COLEÇÃO COMPLETA — 14 MODELOS</strong>
+                <strong>COLEÇÃO COM +200 BRINQUEDOS DE PAPEL</strong>
               </div>
               <div className="offer-body">
                 <h3>Sua próxima brincadeira começa aqui</h3>
                 <ul className="offer-list">
                   <li>
-                    <Check size={18} aria-hidden="true" /> 14 brinquedos diferentes
+                    <Check size={18} aria-hidden="true" /> Mais de 200 brinquedos de papel
                   </li>
                   <li>
                     <Check size={18} aria-hidden="true" /> Arquivos digitais para imprimir
@@ -622,7 +661,7 @@ function Index() {
                     <small>R$</small> 14,99
                   </div>
                   <Button variant="pink" size="lg" className="mt-6 w-full" asChild>
-                    <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                       Comprar agora
                       <ArrowRight size={18} aria-hidden="true" />
                     </a>
@@ -665,9 +704,9 @@ function Index() {
               <br />
               <span>A próxima história pode começar no papel.</span>
             </h2>
-            <p>14 modelos digitais para imprimir, recortar, montar e brincar · R$ 14,99</p>
+            <p>+200 brinquedos de papel para imprimir, recortar, montar e brincar · R$ 14,99</p>
             <Button variant="pink" size="lg" asChild>
-              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+              <a href={checkoutUrl} onClick={trackCheckout} target="_blank" rel="noopener noreferrer">
                 Comprar agora
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
@@ -676,12 +715,15 @@ function Index() {
         </section>
       </main>
 
-      <Button variant="pink" asChild className="sticky-buy">
+      <Button variant="pink" asChild className={`sticky-buy ${showStickyBuy ? "sticky-buy-visible" : ""}`}>
         <a
           href={checkoutUrl}
+          onClick={trackCheckout}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Comprar coleção digital por R$ 14,99"
+          aria-hidden={!showStickyBuy}
+          tabIndex={showStickyBuy ? 0 : -1}
         >
           <span>
             <small>Coleção digital</small>
