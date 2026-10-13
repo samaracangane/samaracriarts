@@ -365,9 +365,9 @@ function Index() {
                 <Sparkles size={15} aria-hidden="true" /> Imaginação fora das telas
               </p>
               <h1 id="hero-title">
-                Tire seu filho das telas
+                +200 brinquedos de papel em 3D
                 <br />
-                <span>e devolva a magia de brincar!</span>
+                <span>para imprimir, montar e brincar!</span>
               </h1>
               <p className="hero-description">
                 Mais de 200 brinquedos de papel — casinhas, mercadinhos, móveis, veículos, personagens e cenários criativos — para imprimir, recortar e montar em casa. Uma forma prática e econômica de estimular a imaginação e criar momentos especiais em família.
@@ -631,6 +631,70 @@ function Index() {
                   </article>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        <section className="audience-section" aria-labelledby="audience-title">
+          <div className="container-site">
+            <div className="section-heading">
+              <p className="eyebrow"><Heart size={15} aria-hidden="true" /> Uma ideia para brincar diferente</p>
+              <h2 id="audience-title">Essa coleção é para quem quer trocar parte do tempo de tela por criatividade</h2>
+              <p>Uma atividade prática para fazer em casa, no ritmo da criança e com a participação de um adulto quando necessário.</p>
+            </div>
+            <div className="audience-grid">
+              <article className="audience-card">
+                <span aria-hidden="true">✂️</span>
+                <h3>Quer uma atividade manual</h3>
+                <p>Imprima, recorte, dobre e cole as peças para transformar papel em brinquedos tridimensionais.</p>
+              </article>
+              <article className="audience-card">
+                <span aria-hidden="true">🏠</span>
+                <h3>Adora inventar cenários</h3>
+                <p>Explore casinhas, quartos, móveis e outros ambientes para criar novas histórias.</p>
+              </article>
+              <article className="audience-card">
+                <span aria-hidden="true">🎨</span>
+                <h3>Gosta de criar com as mãos</h3>
+                <p>Uma proposta que combina imaginação, atenção aos detalhes e montagem passo a passo.</p>
+              </article>
+              <article className="audience-card">
+                <span aria-hidden="true">💗</span>
+                <h3>Quer brincar em família</h3>
+                <p>Separe um momento para preparar os materiais e acompanhar a montagem junto com a criança.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="included-section" aria-labelledby="included-title">
+          <div className="container-site included-layout">
+            <div className="included-copy">
+              <p className="eyebrow"><Sparkles size={15} aria-hidden="true" /> O que você vai encontrar</p>
+              <h2 id="included-title">Uma coleção digital cheia de possibilidades</h2>
+              <p>O pack reúne diferentes tipos de brinquedos de papel para imprimir e montar. Estes são alguns exemplos de categorias que você pode explorar na vitrine:</p>
+              <ul className="included-list">
+                <li><Check size={18} aria-hidden="true" /><span><strong>Casinhas e ambientes</strong><small>Casas, quartos, salas e cozinhas em miniatura.</small></span></li>
+                <li><Check size={18} aria-hidden="true" /><span><strong>Personagens e animais</strong><small>Modelos para inventar personagens e histórias.</small></span></li>
+                <li><Check size={18} aria-hidden="true" /><span><strong>Veículos e detalhes</strong><small>Mais elementos para completar as brincadeiras.</small></span></li>
+                <li><Check size={18} aria-hidden="true" /><span><strong>Arquivos para imprimir</strong><small>Produto digital; é necessário ter papel e materiais de montagem.</small></span></li>
+              </ul>
+            </div>
+            <div className="paper-guide">
+              <h3>Como preparar sua brincadeira</h3>
+              <div className="paper-guide-item">
+                <span>01</span>
+                <div><strong>Escolha o papel</strong><p>Papel comum pode funcionar para alguns modelos; papéis mais firmes podem dar mais estrutura. Confira as instruções de cada arquivo.</p></div>
+              </div>
+              <div className="paper-guide-item">
+                <span>02</span>
+                <div><strong>Separe os materiais</strong><p>Tenha impressora ou acesso a uma papelaria, tesoura, cola e uma superfície livre para montar.</p></div>
+              </div>
+              <div className="paper-guide-item">
+                <span>03</span>
+                <div><strong>Monte com supervisão</strong><p>Um adulto deve acompanhar o uso de tesouras e ajudar nas partes que exigirem mais precisão.</p></div>
+              </div>
+              <p className="conditions-note">Os modelos podem ter requisitos diferentes. Consulte as orientações que acompanham os arquivos.</p>
             </div>
           </div>
         </section>
