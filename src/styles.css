@@ -1957,3 +1957,40 @@
   .poster-benefits strong { font-size: 11px; }
   .poster-benefits p { font-size: 10px; margin-top: 4px; }
 }
+
+
+/* Single complete promotional poster, preserving the reference composition */
+.hero-poster-image-section {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #fff7fb;
+}
+.hero-poster-image-section .container-site {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding: 0;
+}
+.hero-poster-full-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 1024px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center top;
+}
+@media (max-width: 700px) {
+  .hero-poster-image-section .container-site {
+    width: 100%;
+    padding: 0;
+  }
+  .hero-poster-full-image {
+    width: 100%;
+    max-width: none;
+    height: auto;
+  }
+}
