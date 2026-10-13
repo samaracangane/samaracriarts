@@ -370,7 +370,7 @@ function Index() {
                 <span>e devolva a magia de brincar!</span>
               </h1>
               <p className="hero-description">
-                Mais de 200 brinquedos de papel para imprimir, recortar e montar em casa. Uma forma prática e econômica de estimular a imaginação e criar momentos especiais em família.
+                Mais de 200 brinquedos de papel — casinhas, mercadinhos, móveis, veículos, personagens e cenários criativos — para imprimir, recortar e montar em casa. Uma forma prática e econômica de estimular a imaginação e criar momentos especiais em família.
               </p>
               <div className="hero-tags">
                 <span>
@@ -671,8 +671,7 @@ function Index() {
                     <Check size={18} aria-hidden="true" /> Arquivos digitais para imprimir
                   </li>
                   <li>
-                    <Check size={18} aria-hidden="true" /> Casinhas, ambientes, personagens e
-                    veículo
+                    <Check size={18} aria-hidden="true" /> Casinhas, mercadinhos, móveis, veículos e personagens
                   </li>
                   <li>
                     <Check size={18} aria-hidden="true" /> Produto digital, sem envio físico
