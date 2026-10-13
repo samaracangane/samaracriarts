@@ -3,6 +3,7 @@
 - [ ] Conferir integração GitHub, acessibilidade, Pixel e prévia atualizada.
 - [ ] Verificar catálogo, galeria, FAQ, links, testes e lint.
 - [x] Criar página inspirada no modelo com paleta rosa, amarelo e verde-água.
+- [x] Adicionar as 8 imagens novas enviadas (catálogo com 22 produtos).
 - [x] Incluir as nove imagens, galeria e perguntas frequentes.
 - [x] Verificar navegação e visualização.
 - [x] Refinar apresentação, enquadramento das imagens e textos sobre brincar longe das telas.
