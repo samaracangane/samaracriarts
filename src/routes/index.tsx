@@ -351,76 +351,63 @@ function Index() {
       </header>
 
       <main id="conteudo">
-        <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-image hero-product-collage" aria-label="Prévia dos brinquedos de papel para imprimir e montar">
-            <div className="hero-preview-sheet hero-preview-left">
-              <img src={dollHouse.url} alt="Molde e casinha de papel para montar" />
-              <img src={redTruck.url} alt="Veículo de papel para montar" />
-            </div>
-            <div className="hero-product-box">
-              <div className="hero-product-title">
-                <span className="hero-product-count">+200</span>
-                <span>BRINQUEDOS</span>
-                <span className="hero-product-aqua">DE PAPEL</span>
-                <span className="hero-product-3d">EM 3D</span>
-              </div>
-              <img src={kittyHouse.url} alt="Casinha de papel colorida para montar" />
-              <div className="hero-product-footer">IMPRIMA • RECORTE • MONTE • BRINQUE</div>
-            </div>
-            <div className="hero-preview-sheet hero-preview-right">
-              <img src={fairyHouse.url} alt="Casinha de papel de fantasia" />
-              <img src={kittyRoom.url} alt="Ambiente de brinquedo de papel" />
-            </div>
-            <div className="hero-product-categories">
-              <span>🏠<b>CASINHAS</b></span>
-              <span>🛍️<b>MERCADINHOS</b></span>
-              <span>🪑<b>MÓVEIS</b></span>
-              <span>🚗<b>VEÍCULOS</b></span>
-              <span>🎨<b>E MUITO MAIS</b></span>
-            </div>
-          </div>
+        <section className="hero hero-poster-layout" aria-labelledby="hero-title">
           <div className="container-site hero-content">
             <div className="hero-copy">
-              <p className="eyebrow">
-                <Sparkles size={15} aria-hidden="true" /> Imaginação fora das telas
-              </p>
               <h1 id="hero-title">
-                +200 brinquedos de papel em 3D
+                <span className="poster-count">+200</span> BRINQUEDOS
                 <br />
-                <span>para imprimir, montar e brincar!</span>
+                <span className="poster-aqua">DE PAPEL</span>
+                <br />
+                <span className="poster-pink-ribbon">EM 3D</span>
               </h1>
-              <p className="hero-description">
-                Mais de 200 brinquedos de papel — casinhas, mercadinhos, móveis, veículos, personagens e cenários criativos — para imprimir, recortar e montar em casa. Uma forma prática e econômica de estimular a imaginação e criar momentos especiais em família.
+              <p className="poster-slogan">para imprimir, recortar, montar e brincar!</p>
+              <p className="hero-description poster-description">
+                São mais de 200 brinquedos incríveis em 14 categorias, com modelos fáceis de montar e que vão encantar as crianças.
               </p>
-              <div className="hero-tags">
-                <span>
-                  <Download size={15} aria-hidden="true" /> Arquivo digital
-                </span>
-                <span>
-                  <Heart size={15} aria-hidden="true" /> +200 brinquedos para criar
-                </span>
-              </div>
-              <div className="hero-actions">
+              <div className="hero-actions poster-actions">
                 <Button variant="pink" size="lg" asChild>
                   <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
-                    Comprar coleção · R$ 14,99
+                    Quero os +200 brinquedos · R$ 14,99
                     <ArrowRight size={18} aria-hidden="true" />
                   </a>
                 </Button>
-                <Button variant="link" asChild>
-                  <a href="#colecao">
-                    Explorar os modelos <ChevronRight aria-hidden="true" />
-                  </a>
-                </Button>
               </div>
-              <p className="trust-line">
-                <Download size={20} aria-hidden="true" />{" "}
-                <span>
-                  <strong>Você recebe arquivos digitais.</strong>
-                  <br />
-                  Não são brinquedos físicos enviados pelos Correios.
-                </span>
-              </p>
+            </div>
+            <div className="hero-image hero-product-collage" aria-label="Vitrine ilustrada de brinquedos de papel para imprimir e montar">
+              <div className="hero-preview-sheet hero-preview-left">
+                <img src={dollHouse.url} alt="Molde e casinha de papel para montar" />
+                <img src={redTruck.url} alt="Veículos de papel para montar" />
+              </div>
+              <div className="hero-product-box">
+                <div className="hero-product-title">
+                  <span className="hero-product-count">+200</span>
+                  <span>BRINQUEDOS</span>
+                  <span className="hero-product-aqua">DE PAPEL</span>
+                  <span className="hero-product-3d">EM 3D</span>
+                </div>
+                <img src={kittyHouse.url} alt="Exemplo de brinquedo de papel montado" />
+                <div className="hero-product-footer">IMPRIMA • RECORTE • MONTE • BRINQUE</div>
+              </div>
+              <div className="hero-preview-sheet hero-preview-right">
+                <img src={fairyHouse.url} alt="Casinha de papel de fantasia" />
+                <img src={kittyRoom.url} alt="Ambiente de brinquedo de papel" />
+              </div>
+              <div className="hero-product-categories">
+                <span>🏠<b>CASINHAS</b></span>
+                <span>🛍️<b>MERCADINHOS</b></span>
+                <span>🪑<b>MÓVEIS</b></span>
+                <span>🚗<b>VEÍCULOS</b></span>
+                <span>🧸<b>DIVERSOS</b></span>
+                <span>🦸<b>PERSONAGENS</b></span>
+                <span>✨<b>E MUITO MAIS</b></span>
+              </div>
+            </div>
+            <div className="poster-benefits">
+              <article><span className="poster-benefit-icon"><Printer size={27} /></span><div><strong>ARQUIVOS EM PDF</strong><p>Prontos para imprimir em casa.</p></div></article>
+              <article><span className="poster-benefit-icon poster-benefit-pink"><Scissors size={27} /></span><div><strong>MOLDES EM TAMANHO A4</strong><p>Com linhas de corte e dobra bem definidas.</p></div></article>
+              <article><span className="poster-benefit-icon poster-benefit-pink"><Sparkles size={27} /></span><div><strong>+200 BRINQUEDOS</strong><p>Em diversas categorias para estimular a imaginação.</p></div></article>
+              <article><span className="poster-benefit-icon"><Heart size={27} /></span><div><strong>DIVERSÃO CRIATIVA</strong><p>Uma atividade para brincar e criar em família.</p></div></article>
             </div>
           </div>
         </section>
