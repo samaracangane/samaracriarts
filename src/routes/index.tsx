@@ -352,13 +352,33 @@ function Index() {
 
       <main id="conteudo">
         <section className="hero" aria-labelledby="hero-title">
-          <img
-            className="hero-image"
-            src={kittyHouse.url}
-            alt="Casinha de papel Hello Kitty com quarto, banheiro, sala, cozinha e móveis detalhados para montar"
-            fetchPriority="high"
-            decoding="async"
-          />
+          <div className="hero-image hero-product-collage" aria-label="Prévia dos brinquedos de papel para imprimir e montar">
+            <div className="hero-preview-sheet hero-preview-left">
+              <img src={dollHouse.url} alt="Molde e casinha de papel para montar" />
+              <img src={redTruck.url} alt="Veículo de papel para montar" />
+            </div>
+            <div className="hero-product-box">
+              <div className="hero-product-title">
+                <span className="hero-product-count">+200</span>
+                <span>BRINQUEDOS</span>
+                <span className="hero-product-aqua">DE PAPEL</span>
+                <span className="hero-product-3d">EM 3D</span>
+              </div>
+              <img src={kittyHouse.url} alt="Casinha de papel colorida para montar" />
+              <div className="hero-product-footer">IMPRIMA • RECORTE • MONTE • BRINQUE</div>
+            </div>
+            <div className="hero-preview-sheet hero-preview-right">
+              <img src={fairyHouse.url} alt="Casinha de papel de fantasia" />
+              <img src={kittyRoom.url} alt="Ambiente de brinquedo de papel" />
+            </div>
+            <div className="hero-product-categories">
+              <span>🏠<b>CASINHAS</b></span>
+              <span>🛍️<b>MERCADINHOS</b></span>
+              <span>🪑<b>MÓVEIS</b></span>
+              <span>🚗<b>VEÍCULOS</b></span>
+              <span>🎨<b>E MUITO MAIS</b></span>
+            </div>
+          </div>
           <div className="container-site hero-content">
             <div className="hero-copy">
               <p className="eyebrow">
