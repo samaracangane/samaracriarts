@@ -31,6 +31,14 @@ import hulkHero from "@/assets/IMG-20261006-WA0020.jpg.asset.json";
 import pikachu from "@/assets/IMG-20261006-WA0021.jpg.asset.json";
 import bluey from "@/assets/IMG-20261006-WA0022.jpg.asset.json";
 import kidsPhoto from "@/assets/IMG-20261006-WA0026.jpg.asset.json";
+import quartoBoneca from "@/assets/quarto-da-boneca.jpg.asset.json";
+import cachorroAzul from "@/assets/cachorro-azul-de-papel.jpg.asset.json";
+import astronautaAlex from "@/assets/astronauta-alex.jpg.asset.json";
+import gatinhoListrado from "@/assets/gatinho-listrado.jpg.asset.json";
+import familiaSafari from "@/assets/familia-safari.jpg.asset.json";
+import guardiaoEspacial from "@/assets/guardiao-espacial.jpg.asset.json";
+import amiguinhoAmarelo from "@/assets/amiguinho-amarelo.jpg.asset.json";
+import gatinhoReciclado from "@/assets/gatinho-reciclado.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -159,6 +167,62 @@ const products = [
     category: "Personagens",
     image: bluey.url,
     tag: "PARA IMAGINAR",
+  },
+  {
+    name: "Quarto da Boneca",
+    detail: "Quartinho e guarda-roupa cheios de estilo",
+    category: "Ambientes",
+    image: quartoBoneca.url,
+    tag: "QUARTO E CLOSET",
+  },
+  {
+    name: "Cachorrinho Azul",
+    detail: "Prontinho para recortar e colar",
+    category: "Personagens",
+    image: cachorroAzul.url,
+    tag: "RECORTE E COLE",
+  },
+  {
+    name: "Astronauta Alex",
+    detail: "Pronto para explorar o espaço",
+    category: "Personagens",
+    image: astronautaAlex.url,
+    tag: "MONTE EM 3D",
+  },
+  {
+    name: "Gatinho Listrado",
+    detail: "Fofura para montar em minutos",
+    category: "Personagens",
+    image: gatinhoListrado.url,
+    tag: "CHEIO DE ENCANTO",
+  },
+  {
+    name: "Família Safari",
+    detail: "Leão, girafa e elefante de papel",
+    category: "Personagens",
+    image: familiaSafari.url,
+    tag: "TRÊS AMIGUINHOS",
+  },
+  {
+    name: "Guardião Espacial",
+    detail: "O brinquedo favorito em versão de tubo",
+    category: "Personagens",
+    image: guardiaoEspacial.url,
+    tag: "FEITO DE TUBO",
+  },
+  {
+    name: "Amiguinho Amarelo",
+    detail: "O dourado mais divertido do papel",
+    category: "Personagens",
+    image: amiguinhoAmarelo.url,
+    tag: "PURO DIVERSÃO",
+  },
+  {
+    name: "Gatinho Reciclado",
+    detail: "Feito com caixinhas em casa",
+    category: "Personagens",
+    image: gatinhoReciclado.url,
+    tag: "RECICLAGEM CRIATIVA",
   },
 ];
 
