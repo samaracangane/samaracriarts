@@ -340,12 +340,12 @@ function Index() {
                 <Sparkles size={15} aria-hidden="true" /> Imaginação fora das telas
               </p>
               <h1 id="hero-title">
-                Brinquedos de papel.
+                Tire seu filho das telas
                 <br />
-                <span>Grandes histórias.</span>
+                <span>e devolva a magia de brincar!</span>
               </h1>
               <p className="hero-description">
-                Troque um tempo de tela por um momento de criação. Casinhas, personagens e
+                Mais de 200 brinquedos de papel para imprimir, recortar e montar em casa. Uma forma prática e econômica de estimular a imaginação e criar momentos especiais em família. Casinhas, personagens e
                 brinquedos digitais para imprimir, recortar, montar e brincar juntos.
               </p>
               <div className="hero-tags">
@@ -642,7 +642,7 @@ function Index() {
                 <h3>Sua próxima brincadeira começa aqui</h3>
                 <ul className="offer-list">
                   <li>
-                    <Check size={18} aria-hidden="true" /> 14 brinquedos diferentes
+                    <Check size={18} aria-hidden="true" /> Mais de 200 brinquedos de papel
                   </li>
                   <li>
                     <Check size={18} aria-hidden="true" /> Arquivos digitais para imprimir
