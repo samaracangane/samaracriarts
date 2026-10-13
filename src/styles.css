@@ -1604,3 +1604,152 @@
     border-radius: 20px;
   }
 }
+
+
+/* Product showcase inspired by the vibrant +200 paper toys campaign */
+.hero-product-collage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 26px 18px 100px 28px;
+  overflow: visible;
+  object-fit: initial;
+}
+.hero-product-box {
+  position: relative;
+  z-index: 2;
+  width: 52%;
+  max-width: 340px;
+  min-height: 365px;
+  padding: 18px 14px 14px;
+  border: 4px solid #38D9C3;
+  border-radius: 18px;
+  background: linear-gradient(150deg, #FF1688 0%, #ff5ca9 56%, #38D9C3 100%);
+  box-shadow: 0 16px 28px rgb(41 35 51 / 18%);
+  text-align: center;
+  transform: rotate(-1deg);
+}
+.hero-product-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: .98;
+  text-shadow: 0 3px 0 rgb(75 23 83 / 22%);
+}
+.hero-product-count {
+  font-size: clamp(34px, 4vw, 54px);
+  letter-spacing: -2px;
+  -webkit-text-stroke: 1px #38D9C3;
+}
+.hero-product-title > span:nth-child(2) { font-size: clamp(18px, 2vw, 25px); }
+.hero-product-aqua {
+  color: #38D9C3;
+  font-size: clamp(20px, 2.4vw, 30px);
+  -webkit-text-stroke: .5px white;
+}
+.hero-product-3d {
+  margin-top: 5px;
+  padding: 4px 16px;
+  border-radius: 999px;
+  background: #38D9C3;
+  color: #292333;
+  font-size: 17px;
+}
+.hero-product-box > img {
+  display: block;
+  width: 100%;
+  height: 195px;
+  margin: 8px auto 0;
+  object-fit: contain;
+  border-radius: 10px;
+  background: rgb(255 255 255 / 92%);
+}
+.hero-product-footer {
+  margin-top: 10px;
+  padding: 8px 5px;
+  border-radius: 8px;
+  background: #38D9C3;
+  color: #173f45;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+.hero-preview-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 26%;
+  max-width: 170px;
+  position: relative;
+  z-index: 1;
+}
+.hero-preview-sheet img {
+  width: 100%;
+  height: 145px;
+  object-fit: contain;
+  border: 3px solid #FF1688;
+  border-radius: 12px;
+  padding: 5px;
+  background: white;
+  box-shadow: 0 8px 18px rgb(41 35 51 / 12%);
+}
+.hero-preview-left { transform: rotate(-5deg) translateX(10px); }
+.hero-preview-right { transform: rotate(5deg) translateX(-10px); }
+.hero-product-categories {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 5px;
+}
+.hero-product-categories span {
+  display: flex;
+  min-height: 55px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 5px 2px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: #FF1688;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 3px 0 #38D9C3;
+}
+.hero-product-categories span:nth-child(even) { background: #12bfae; }
+.hero-product-categories b {
+  font-size: 8px;
+  line-height: 1.15;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .hero-product-collage {
+    height: 380px;
+    padding: 12px 8px 84px;
+  }
+  .hero-product-box {
+    width: 56%;
+    min-height: 270px;
+    padding: 12px 8px 8px;
+    border-width: 3px;
+    border-radius: 13px;
+  }
+  .hero-product-count { font-size: 34px; }
+  .hero-product-title > span:nth-child(2) { font-size: 15px; }
+  .hero-product-aqua { font-size: 20px; }
+  .hero-product-3d { font-size: 12px; padding: 4px 12px; }
+  .hero-product-box > img { height: 125px; }
+  .hero-product-footer { font-size: 7px; margin-top: 6px; }
+  .hero-preview-sheet { width: 25%; gap: 8px; }
+  .hero-preview-sheet img { height: 95px; border-width: 2px; padding: 3px; }
+  .hero-product-categories { bottom: 12px; gap: 4px; left: 1%; right: 1%; }
+  .hero-product-categories span { min-height: 48px; font-size: 13px; border-radius: 8px; }
+  .hero-product-categories b { font-size: 6px; }
+}
